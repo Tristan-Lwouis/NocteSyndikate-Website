@@ -19,7 +19,8 @@
 /* --- Global Styles --- */
 h1 {
     margin: 0;
-    font-family: 'Vixa-Regular', sans-serif;
+    // font-family: 'Vixa-Regular', sans-serif;
+    font-family: 'Vixa-Regular';
     /* Fallback sur sans-serif si la police ne charge pas */
     -webkit-font-smoothing: antialiased;
     /* Rendu plus net sur Mac/iOS */
@@ -42,13 +43,14 @@ p {
     -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 /* --- Button Styles --- */
 .brutalist-button-frame {
-    background-color: #D9D9D9;
-    box-shadow: 0.3em 0.3em 0 0 #1C1C1C;
-    border: solid 1px #1C1C1C;
+    background-color: var(--background-secondary-color);
+    box-shadow: 0.3em 0.3em 0 0  var(--primary-color);
+    border: solid 1px var(--primary-color);
 
-    color: #1C1C1C;
     transition: color 0.3s ease;
     font-weight: 900;
 
@@ -56,17 +58,16 @@ p {
     margin: 2vh 0;
     border-radius: 0.2em;
 
-    cursor: pointer;
     transition: all 0.1s ease;
     display: inline-block;
 
     &:hover {
-        color: #FF6200;
+        color: var(--accent-color);
     }
 
     &:active {
         transform: translate(0.2em, 0.2em);
-        box-shadow: 0.1em 0.1em 0 0 #1C1C1C;
+        box-shadow: 0.1em 0.1em 0 0  var(--primary-color);
     }
 }
 
@@ -74,21 +75,20 @@ p {
     border: none;
     margin-top: 0.2vh;
 
-    color: #1C1C1C;
+    color: var(--primary-color);
     font-weight: 800;
 
     background: none;
-    cursor: pointer;
     transition: color 0.3s ease;
 
     &:hover {
-        color: #FF6200;
+        color: var(--accent-color);
     }
 }
 
 /* --- Hero section Styles --- */
 .hero-section-global {
-    background-color: #EEEEEE;
+    background-color: var(--background-color);
     height: 100vh;
     margin-left: 2%;
     position: relative;
@@ -96,12 +96,11 @@ p {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    
 }
 
 .hero-section-title {
     font-size: 11em;
-    color: #1C1C1C;
+    color:  var(--primary-color);
     line-height: 0.8em;
 }
 
@@ -118,9 +117,6 @@ p {
 
 /* --- Nocte Cricles --- */
 .nocte-circles {
-    /* Test */
-        // border: solid 1px red;
-
     position: absolute;
     top: 50%;
     right: -25%;
@@ -129,5 +125,4 @@ p {
     height: 100vh;
     pointer-events: none;
     z-index: 10;
-
 }

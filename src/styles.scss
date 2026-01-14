@@ -1,11 +1,31 @@
+/* --- COLORS --- */
+:root {
+    --background-color: #EEEEEE;
+    --background-secondary-color: #D9D9D9;
+    --primary-color: #1C1C1C;
+    --secondary-color: #FF6200;
+    --accent-color: #FF6200;
+  
+    --c-border: rgba(0, 0, 0, 0.12);
+  
+    --radius: 16px;
+    --shadow: 0 12px 30px rgba(0,0,0,.12);
+  }
+
+/* --- GLOBAL STYLE --- */
+* {
+    cursor: none;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #EEEEEE;
+    color: var(--primary-color);
     overflow-x: hidden;
 }
 
 ::selection {
-    background-color: #FF6200;
-    color: #FFFFFF;
+    background-color: var(--accent-color);
+    color: var(--background-color);
 }

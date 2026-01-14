@@ -1,0 +1,77 @@
+/* Cache le curseur natif uniquement quand activé */
+:host-context(.custom-cursor-enabled) {
+    * {
+      cursor: none !important;
+    }
+  }
+  
+  /* Curseur */
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    margin-left: -13px; /* centre sur la souris */
+    margin-top: -13px;
+    pointer-events: none;
+    z-index: 999999;
+  
+    border: 2px solid #111;
+    background: #fff;
+    border-radius: 999px;
+  
+    /* micro “snap” visuel propre */
+    transform: translate3d(0,0,0);
+    will-change: transform;
+  }
+  
+  .cursor-dot {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #111;
+  }
+  
+  /* Burst comics */
+  .burst {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+    z-index: 999998;
+    will-change: transform;
+  }
+  
+.ray {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 50%;
+}
+
+.ray-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 2px;
+  background: #111;
+  border-radius: 2px;
+  transform-origin: 0 50%;
+  transform: translateX(8px);
+  animation: pop 260ms ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes pop {
+  0%   { opacity: 0; transform: translateX(8px) scaleX(0.4); }
+  25%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(20px) scaleX(1.05); }
+}
+  

@@ -1,0 +1,22 @@
+@if (enabled) {
+<div
+  class="cursor"
+  [style.transform]="'translate3d(' + cursorX + 'px,' + cursorY + 'px,0)'"
+>
+  <div class="cursor-dot"></div>
+</div>
+}
+
+<!-- Bursts de clic -->
+@for (b of bursts; track b.id) {
+<div  class="burst"
+  [style.transform]="'translate3d(' + b.x + 'px,' + b.y + 'px,0) rotate(' + b.rotation + 'deg)'">
+  @for (angle of rayAngles; track angle) {
+  <span
+    class="ray"
+    [style.transform]="'rotate(' + angle + 'deg)'">
+    <span class="ray-line"></span>
+  </span>
+  }
+</div>
+}
