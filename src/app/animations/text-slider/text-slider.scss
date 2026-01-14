@@ -1,0 +1,46 @@
+.slider-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation-name: scroll-left-to-right;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  
+  /* Pour assurer que la transformation se fait bien */
+  will-change: transform;
+}
+
+.slider-content {
+  display: flex;
+  align-items: center;
+  
+  span {
+    padding-right: 0.5em; /* Espace entre les répétitions du texte */
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 1rem; /* Taille par défaut, ajustable via le parent */
+    color: #1C1C1C;
+  }
+}
+
+/* Animation de Gauche vers la Droite (->) */
+/* 
+   On commence décalé à gauche (-50%) donc on voit la partie droite (copie).
+   On finit à 0% (on voit la partie gauche originale).
+   Le mouvement visuel est vers la droite.
+*/
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

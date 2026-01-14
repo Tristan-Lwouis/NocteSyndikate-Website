@@ -1,0 +1,18 @@
+<div class="slider-container">
+    <div class="slider-track" [style.animation-duration]="duration + 's'">
+        <!-- Premier bloc de contenu -->
+        <div class="slider-content">
+            <span>{{ text }}</span>
+            <span>{{ text }}</span> <!-- Répétition interne pour être sûr de remplir l'écran si le texte est court -->
+            <span>{{ text }}</span>
+            <span>{{ text }}</span>
+        </div>
+        <!-- Duplication pour la boucle infinie -->
+        <div class="slider-content">
+            <span>{{ text }}</span>
+            <span>{{ text }}</span>
+            <span>{{ text }}</span>
+            <span>{{ text }}</span>
+        </div>
+    </div>
+</div>
