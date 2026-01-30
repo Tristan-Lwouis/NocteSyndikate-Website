@@ -1,94 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* --- Custom Fonts Configuration --- */
-@font-face {
-    font-family: 'Vixa-Regular';
-    src: url('/fonts/Vixa-regular.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter.woff2') format('woff2');
-    font-style: normal;
-    font-display: swap;
-}
-
-/* --- Global Styles --- */
-h1 {
-    margin: 0;
-    // font-family: 'Vixa-Regular', sans-serif;
-    font-family: 'Vixa-Regular';
-    /* Fallback sur sans-serif si la police ne charge pas */
-    -webkit-font-smoothing: antialiased;
-    /* Rendu plus net sur Mac/iOS */
-    -moz-osx-font-smoothing: grayscale;
-}
-
-h2,h3 {
-    margin: 0;
-    font-family: sans-serif;
-    font-weight: 900;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-p {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    /* Fallback sur sans-serif si la police ne charge pas */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
-
-/* --- Button Styles --- */
-.brutalist-button-frame {
-    background-color: var(--background-secondary-color);
-    box-shadow: 0.3em 0.3em 0 0  var(--primary-color);
-    border: solid 1px var(--primary-color);
-
-    transition: color 0.3s ease;
-    font-weight: 900;
-
-    padding: 0.6em 1em;
-    margin: 2vh 0;
-    border-radius: 0.2em;
-
-    transition: all 0.1s ease;
-    display: inline-block;
-
-    &:hover {
-        color: var(--accent-color);
-    }
-
-    &:active {
-        transform: translate(0.2em, 0.2em);
-        box-shadow: 0.1em 0.1em 0 0  var(--primary-color);
-    }
-}
-
-.brutalist-button-frameless {
-    border: none;
-    margin-top: 0.2vh;
-
-    color: var(--primary-color);
-    font-weight: 800;
-
-    background: none;
-    transition: color 0.3s ease;
-
-    &:hover {
-        color: var(--accent-color);
-    }
-}
-
 /* --- Hero section Styles --- */
 .hero-section-global {
-    background-color: var(--background-color);
+    // background-color: var(--background-color);
     height: 100vh;
     margin-left: 2%;
     position: relative;
@@ -96,11 +8,12 @@ p {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    // z-index: 3;
 }
 
 .hero-section-title {
     font-size: 11em;
-    color:  var(--primary-color);
+    color: var(--primary-color);
     line-height: 0.8em;
 }
 
@@ -115,14 +28,50 @@ p {
     }
 }
 
+#text-slider {
+    // ? Ne fonctionne pas, le background des particules vient le cacher
+    z-index: 1000;
+}
+
 /* --- Nocte Cricles --- */
-.nocte-circles {
+
+.nocte-circles-container {
     position: absolute;
-    top: 50%;
-    right: -25%;
-    transform: translateY(-50%);
-    width: 100vh;
-    height: 100vh;
+    transform: translateX(50%);
+    top: -55%;
+    right: 0%;
+    width: 200vw;
+    height: 130%;
     pointer-events: none;
-    z-index: 10;
+
+    display: grid;
+    place-items: center;
+
+    .nocte-circles {
+        grid-area: 1 / 1;
+        width: 25%;
+        max-height: 50vh;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .circle-background {
+        grid-area: 1 / 1;
+        aspect-ratio: 1 / 1;
+        width: 19%;
+        background-color: var(--background-color);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0; // Behind nocte-circles but above particles if needed, adjusting z-index logic
+        filter: blur(20px);
+    }
+
+    /* --- Particles --- */
+    .particles-circles {
+        grid-area: 1 / 1;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -5;
+    }
 }

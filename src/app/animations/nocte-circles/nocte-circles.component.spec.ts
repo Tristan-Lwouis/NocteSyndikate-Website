@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NocteCirclesV2Component } from './nocte-circles-v2.component';
+import { NocteCirclesComponent } from './nocte-circles.component';
 
-describe('NocteCirclesV2Component', () => {
-  let component: NocteCirclesV2Component;
-  let fixture: ComponentFixture<NocteCirclesV2Component>;
+describe('NocteCirclesComponent', () => {
+  let component: NocteCirclesComponent;
+  let fixture: ComponentFixture<NocteCirclesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NocteCirclesV2Component]
+      imports: [NocteCirclesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NocteCirclesV2Component);
+    fixture = TestBed.createComponent(NocteCirclesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,10 +1,10 @@
 /* --- COLORS --- */
 :root {
-    --background-color: #EEEEEE;
-    --background-secondary-color: #D9D9D9;
-    --primary-color: #1C1C1C;
-    --secondary-color: #FF6200;
-    --accent-color: #FF6200;
+    --background-color: #eeeeee;
+    --background-secondary-color: #d9d9d9;
+    --primary-color: #1c1c1c;
+    --secondary-color: #ff6200;
+    --accent-color: #ff6200;
   
     --c-border: rgba(0, 0, 0, 0.12);
   
@@ -12,7 +12,25 @@
     --shadow: 0 12px 30px rgba(0,0,0,.12);
   }
 
+/* --- CUSTOM FONT CONFIGURATION --- */
+
+@font-face {
+    font-family: 'Vixa-Regular';
+    src: url('/fonts/Vixa-regular.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+
 /* --- GLOBAL STYLE --- */
+
 * {
     cursor: none;
 }
@@ -20,7 +38,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #EEEEEE;
+    background-color: var(--background-color);
     color: var(--primary-color);
     overflow-x: hidden;
 }
@@ -29,3 +47,71 @@ body {
     background-color: var(--accent-color);
     color: var(--background-color);
 }
+
+h1 {
+    margin: 0;
+    // font-family: 'Vixa-Regular', sans-serif;
+    font-family: 'Vixa-Regular';
+    /* Fallback sur sans-serif si la police ne charge pas */
+    -webkit-font-smoothing: antialiased;
+    /* Rendu plus net sur Mac/iOS */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h2,h3 {
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    /* Fallback sur sans-serif si la police ne charge pas */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Button Styles --- */
+.brutalist-button-frame {
+    background-color: var(--background-secondary-color);
+    box-shadow: 0.3em 0.3em 0 0  var(--primary-color);
+    border: solid 1px var(--primary-color);
+
+    transition: color 0.3s ease;
+    font-weight: 900;
+
+    padding: 0.6em 1em;
+    margin: 2vh 0;
+    border-radius: 0.2em;
+
+    transition: all 0.1s ease;
+    display: inline-block;
+
+    &:hover {
+        color: var(--accent-color);
+    }
+
+    &:active {
+        transform: translate(0.2em, 0.2em);
+        box-shadow: 0.1em 0.1em 0 0  var(--primary-color);
+    }
+}
+
+.brutalist-button-frameless {
+    border: none;
+    margin-top: 0.2vh;
+
+    color: var(--primary-color);
+    font-weight: 800;
+
+    background: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--accent-color);
+    }
+}
+
