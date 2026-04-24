@@ -73,11 +73,11 @@ class Particle {
     if (Math.abs(this.vel.y) > this.vel.min) this.vel.y *= velocityDamp;
 
     // wrap-around
-    if (this.x > windowWidth) this.x = 0;
-    else if (this.x < 0) this.x = windowWidth;
+    if (this.x > windowWidth) this.x -= windowWidth;
+    else if (this.x < 0) this.x += windowWidth;
 
-    if (this.y > windowHeight) this.y = 0;
-    else if (this.y < 0) this.y = windowHeight;
+    if (this.y > windowHeight) this.y -= windowHeight;
+    else if (this.y < 0) this.y += windowHeight;
   }
 }
 
@@ -92,15 +92,23 @@ class Particle {
 export class ParticlesCircle implements AfterViewInit, OnDestroy {
   @ViewChild('canvas', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
 
-  @Input() numberParticlesStart = 100;
+  /** Nombre de particules affichées au démarrage */
+  @Input() numberParticlesStart = 200;
+  /** Vitesse globale de déplacement des particules */
   @Input() particleSpeed = 0.2;
-  @Input() velocity = 1;
+  /** Facteur d'amortissement ou d'accélération (multiplicateur de vélocité) */
+  @Input() velocity = 2;
+  /** Rayon du cercle d'apparition des particules */
   @Input() circleWidth = 310;
+  /** Couleur des particules (format CSS) */
   @Input() particleColor = 'rgba(0, 0, 0, 0.05)';
 
-  @Input() cycleEveryMs = 8_000; // toutes les 15s
-  @Input() fadeDurationMs = 2_000; // ease sur 3s
-  @Input() fadeRgb: `${number},${number},${number}` = '238,238,238'; //Couleur de fade -> BackgroundColor
+  /** Durée du cycle d'animation en millisecondes (avant le reset/fade) */
+  @Input() cycleEveryMs = 8_000;
+  /** Durée de la transition de disparition (fade out) en millisecondes */
+  @Input() fadeDurationMs = 2_000;
+  /** Couleur utilisée pour l'effet de fade (format R,G,B) */
+  @Input() fadeRgb: `${number},${number},${number}` = '238,238,238';
 
   private ctx!: CanvasRenderingContext2D;
   private particles: Particle[] = [];
@@ -184,7 +192,14 @@ export class ParticlesCircle implements AfterViewInit, OnDestroy {
 
     this.ctx.save();
     this.ctx.globalCompositeOperation = 'source-over';
-    this.ctx.fillStyle = `rgba(${this.fadeRgb}, ${p})`;
+    
+    let bgStr = document.documentElement.style.getPropertyValue('--background-color');
+    if (!bgStr) {
+      bgStr = `rgb(${this.fadeRgb})`;
+    }
+    const fadeColor = bgStr.replace('rgb(', 'rgba(').replace(')', `, ${p})`);
+    
+    this.ctx.fillStyle = fadeColor;
     this.ctx.fillRect(0, 0, this.width, this.height);
     this.ctx.restore();
   }
@@ -211,13 +226,10 @@ export class ParticlesCircle implements AfterViewInit, OnDestroy {
 
       this.applyFade(eased);
 
-      // ✅ Quand c’est totalement effacé : reset + restart
+      // Quand c’est totalement effacé : reset + restart
       if (t >= 1) {
-        // on force une frame “opaque total” pour être sûr qu'il reste rien
         this.applyFade(1);
-
         this.reset();
-
         this.phase = 'RUN';
         this.cycleStartMs = now;
       }

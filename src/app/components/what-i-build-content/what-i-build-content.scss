@@ -1,0 +1,140 @@
+.horizontal-scroll-wrapper {
+    /* Hauteur totale pour scroller (plus c'est grand, plus le défilement horizontal sera long/lent) */
+    height: 300vh; 
+    position: relative;
+    width: 100%;
+}
+
+.glyphs-background {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150vh; /* 50vh de marge pour le parallax */
+    margin-bottom: -50vh; /* La div prendra virtuellement 100vh de place (150-50). Elle s'arrêtera donc de "coller" pile à la fin du wrapper ! */
+    background-color: var(--primary-color);
+    -webkit-mask-image: url('/assets/images/GLYPHS_5.svg');
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url('/assets/images/GLYPHS_5.svg');
+    mask-size: cover;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 5vh; /* Se colle près du haut de l'écran */
+    width: 100%;
+    margin-top: -150vh; /* Compense l'intégralité de la taille du background pour remettre le contenu tout en haut ! */
+}
+
+.section-title-right {
+    color: var(--primary-color);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: 1%;
+
+    #what-i-build-title {
+        font-size: 5vw;
+        color: var(--primary-color);
+        line-height: 0.8;
+    }
+
+    h2 {
+        margin: 0;
+        // line-height: 0.8;
+        color: var(--primary-color);
+    }
+
+    #what-i-build-description {
+        text-align: right;
+        color: var(--primary-color);
+    }
+
+}
+
+.sticky-container {
+    background-color: var(--primary-color);
+    position: sticky;
+    /* Collé à 25vh du haut de l'écran. */
+    top: 25vh; 
+    height: 50vh;
+    width: 100%;
+    overflow: hidden; /* Masque les cartes qui sortent à droite */
+    display: flex;
+    align-items: center;
+}
+
+.cards-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2vw;
+    padding: 2vw 2vw 2vw 2vw; /* Marge initiale pour la première carte */
+    width: max-content; /* Permet au container de prendre la largeur de toutes les cartes */
+    will-change: transform; /* Optimisation des performances */
+    background-color: var(--primary-color);
+    
+    .card {
+        width: 30.5vw;
+        height: 100%;
+        padding: 20px;
+        background-color: var(--background-color);
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(0,0,0,1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0; /* Empêche les cartes de s'écraser */
+        position: relative;
+        overflow: hidden; /* Empêche le fond de dépasser les bords arrondis */
+
+        .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            -webkit-mask-size: cover;
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-size: cover;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            opacity: 0.15; /* Effet de transparence de l'image */
+            z-index: 0;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1; /* Reste au-dessus de l'image de fond */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: var(--primary-color);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+    }
+}

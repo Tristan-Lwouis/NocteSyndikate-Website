@@ -8,11 +8,10 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    // z-index: 3;
 }
 
 .hero-section-title {
-    font-size: 11em;
+    font-size: 10vw;
     color: var(--primary-color);
     line-height: 0.8em;
 }
@@ -29,7 +28,7 @@
 }
 
 #text-slider {
-    // ? Ne fonctionne pas, le background des particules vient le cacher
+    position: relative;
     z-index: 1000;
 }
 
@@ -37,11 +36,12 @@
 
 .nocte-circles-container {
     position: absolute;
-    transform: translateX(50%);
-    top: -55%;
+    top: 50vh;
     right: 0%;
-    width: 200vw;
-    height: 130%;
+    /* Position du cercle */
+    transform: translate(45%, -50%);
+    width: clamp(800px, 80vw, 1200px);
+    height: clamp(800px, 80vw, 1200px);
     pointer-events: none;
 
     display: grid;
@@ -49,20 +49,20 @@
 
     .nocte-circles {
         grid-area: 1 / 1;
-        width: 25%;
-        max-height: 50vh;
+        width: 65%;
+        height: 65%;
         pointer-events: none;
         z-index: 1;
     }
 
     .circle-background {
         grid-area: 1 / 1;
-        aspect-ratio: 1 / 1;
-        width: 19%;
-        background-color: var(--background-color);
+        width: 30%;
+        height: 30%;
+        // background-color: var(--background-color);
         border-radius: 50%;
         pointer-events: none;
-        z-index: 0; // Behind nocte-circles but above particles if needed, adjusting z-index logic
+        z-index: 0;
         filter: blur(20px);
     }
 
@@ -73,5 +73,27 @@
         height: 100%;
         pointer-events: none;
         z-index: -5;
+    }
+}
+
+.section-what-i-build {
+    position: relative;
+    margin-top: 20vh;
+    z-index: 10;
+}
+
+.section-about-me {
+    height: 100vh;
+    position: relative;
+    margin-top: 20vh;
+    z-index: 10;
+
+    .section-title-left {
+        color: var(--primary-color);
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 1%;
     }
 }

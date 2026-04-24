@@ -16,13 +16,13 @@ export class NocteCirclesComponent  implements OnInit {
     const container = this.el.nativeElement.querySelector('.circleContainer');
 
     //Variables de controle de l'animation
-    const nbCircles = parseInt(root.getPropertyValue('--nb-circles')) || 7;
+    const nbCircles = parseInt(root.getPropertyValue('--nb-circles')) || 9;
     const maxSize = parseFloat(root.getPropertyValue('--max-size')) || 100;
     const scaleStep = parseFloat(root.getPropertyValue('--scale-step')) || 0.8;
     const durationBase = parseFloat(root.getPropertyValue('--duration-base')) || 100;
     const durationStep = parseFloat(root.getPropertyValue('--duration-step')) || 0.6;
     const opacityStart = parseFloat(root.getPropertyValue('--opacity-start')) || 1;
-    const opacityStep = parseFloat(root.getPropertyValue('--opacity-step')) || 0.15;
+    const opacityStep = parseFloat(root.getPropertyValue('--opacity-step')) || 0.10;
 
     for (let i = 0; i < nbCircles; i++) {
       const circle = this.renderer.createElement('img');

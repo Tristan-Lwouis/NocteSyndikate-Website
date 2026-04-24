@@ -1,8 +1,9 @@
 /* --- COLORS --- */
 :root {
     --background-color: #eeeeee;
-    --background-secondary-color: #d9d9d9;
     --primary-color: #1c1c1c;
+
+    --background-secondary-color: #d9d9d9;
     --secondary-color: #ff6200;
     --accent-color: #ff6200;
   
@@ -33,6 +34,7 @@
 
 * {
     cursor: none;
+    box-sizing: border-box;
 }
 
 body {
