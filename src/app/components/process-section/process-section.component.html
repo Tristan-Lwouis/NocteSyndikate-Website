@@ -1,0 +1,78 @@
+<div class="process-container">
+
+    <!-- Header Description Text
+    <div class="process-header-info">
+        <p>A structured approach to bring ideas to life. Whether it's a logo identity or a website, every project follows a clear and proven process.</p>
+        <span class="star-icon" style="-webkit-mask-image: url('assets/icons/design.svg'); mask-image: url('assets/icons/design.svg');"></span>
+    </div> -->
+
+    <!-- Tabs -->
+    <div class="process-tabs">
+        <button 
+            class="process-tab" 
+            [class.active]="activeTab() === 'logo'"
+            (click)="setTab('logo')">
+            <span class="tab-icon" style="-webkit-mask-image: url('assets/icons/design.svg'); mask-image: url('assets/icons/design.svg');"></span>
+            {{ 'process.tabs.logo' | transloco }}
+        </button>
+        <button 
+            class="process-tab" 
+            [class.active]="activeTab() === 'website'"
+            (click)="setTab('website')">
+            <span class="tab-icon" style="-webkit-mask-image: url('assets/icons/dev.svg'); mask-image: url('assets/icons/dev.svg');"></span>
+            {{ 'process.tabs.website' | transloco }}
+        </button>
+    </div>
+
+    <!-- Steps Grid -->
+    <div class="process-steps-grid">
+        <div class="step-card" *ngFor="let step of currentSteps">
+            <!-- Background Image -->
+            <span class="step-bg-glyph" [style.-webkit-mask-image]="'url(' + step.bgImage + ')'" [style.mask-image]="'url(' + step.bgImage + ')'"></span>
+            
+            <div class="step-content">
+                <div class="step-number">{{ step.number }}</div>
+                <h3 class="step-title">{{ step.titleKey | transloco }}</h3>
+                <p class="step-description">{{ step.descKey | transloco }}</p>
+                
+                <ul class="step-bullets">
+                    <li *ngFor="let bullet of step.bulletsKey">
+                        <span class="bullet-plus">+</span> {{ bullet | transloco }}
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="step-footer">
+                [ {{ step.durationKey | transloco }} ]
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Info Row -->
+    <div class="process-footer-row">
+        <div class="footer-info-item">
+            <span class="footer-icon" style="-webkit-mask-image: url('assets/icons/kustom.svg'); mask-image: url('assets/icons/kustom.svg');"></span>
+            <div>
+                <h4>{{ 'process.footer.tailored.title' | transloco }}</h4>
+                <p>{{ 'process.footer.tailored.desc' | transloco }}</p>
+            </div>
+        </div>
+        
+        <div class="footer-info-item middle-item">
+            <span class="footer-icon" style="-webkit-mask-image: url('assets/icons/details.svg'); mask-image: url('assets/icons/details.svg');"></span>
+            <div>
+                <h4>{{ 'process.footer.transparent.title' | transloco }}</h4>
+                <p>{{ 'process.footer.transparent.desc' | transloco }}</p>
+            </div>
+        </div>
+        
+        <div class="footer-cta-item">
+            <div>
+                <p class="cta-subtitle">{{ 'process.footer.cta.subtitle' | transloco }}</p>
+                <a href="#section-let-talk" class="cta-link">
+                    {{ 'process.footer.cta.link' | transloco }} <span class="arrow">⟶</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

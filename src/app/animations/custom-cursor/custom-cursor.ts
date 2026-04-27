@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostListener, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 type ClickBurst = {
@@ -35,10 +35,9 @@ export class CustomCursor implements OnInit, OnDestroy {
 
   private rafId: number | null = null;
 
-  constructor(
-    private zone: NgZone,
-    private cdr: ChangeDetectorRef,
-  ) { }
+  private cursorEl: HTMLElement | null = null;
+
+  constructor(private zone: NgZone) { }
 
   ngOnInit(): void {
     // Désactive sur devices tactiles + si l'utilisateur préfère réduire les animations
@@ -59,7 +58,13 @@ export class CustomCursor implements OnInit, OnDestroy {
         this.cursorX += (this.mouseX - this.cursorX) * ease;
         this.cursorY += (this.mouseY - this.cursorY) * ease;
 
-        this.cdr.detectChanges();
+        // Mise à jour du DOM directement, SANS passer par Angular (évite detectChanges à 60fps)
+        if (!this.cursorEl) {
+          this.cursorEl = document.querySelector('.cursor-wrapper');
+        }
+        if (this.cursorEl) {
+          this.cursorEl.style.transform = `translate3d(${this.cursorX}px, ${this.cursorY}px, 0)`;
+        }
 
         this.rafId = requestAnimationFrame(loop);
       };

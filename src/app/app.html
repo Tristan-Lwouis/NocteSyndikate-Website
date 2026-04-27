@@ -1,59 +1,199 @@
 <app-custom-cursor></app-custom-cursor>
+
+<button id="back-to-top" (click)="scrollToTop()" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+</button>
+
+<!-- HERO SECTION -->
+<app-language-switcher></app-language-switcher>
 <app-text-slider id="text-slider"></app-text-slider>
-<div class="nocte-circles-container">
-    <app-particlesCircle class="particles-circles"></app-particlesCircle>
-    <div class="circle-background"></div>
-    <app-nocte-circles class="nocte-circles"></app-nocte-circles>
-</div>
-<div class="hero-section-global ">
-    <div>
-        <h1 class="hero-section-title">NOCTE<br>SYNDIKATE</h1>
-        <h3>NOCTE SYNDIKATE - GRAPHIC DESIGN - WEBAGENCY</h3>
-        <p>Nocte Syndikate is my graphic design and web agency based in Toulouse, France.</p>
+<div class="hero-pin-container">
+    <div class="nocte-circles-container">
+        <app-particlesCircle class="particles-circles"></app-particlesCircle>
+        <div class="circle-background"></div>
+        <app-nocte-circles class="nocte-circles"></app-nocte-circles>
+    </div>
+    <div class="hero-section-global">
+        <div>
+            <h1 class="hero-section-title">NOCTE<br>SYNDIKATE</h1>
+            <h3>NOCTE SYNDIKATE - GRAPHIC DESIGN - WEBAGENCY</h3>
+            <p>{{ 'hero.description' | transloco }}</p>
 
-        <nav>
-            <button class="brutalist-button-frame">[ BOOK A CALL ]</button>
-            <div class="menu-hero-section">
-                <button class="brutalist-button-frameless">[ ABOUT ME ]</button>
-                <button class="brutalist-button-frameless">[ SERVICE ]</button>
-                <button class="brutalist-button-frameless">[ WORK ]</button>
-                <button class="brutalist-button-frameless">[ PROCESS ]</button>
-                <button class="brutalist-button-frameless">[ PRICES ]</button>
-                <button class="brutalist-button-frameless">[ CONTACT ]</button>
-            </div>
-        </nav>
+            <nav>
+                <button class="brutalist-button-frame" (click)="scrollToSection('#section-let-talk')">[ BOOK A CALL
+                    ]</button>
+                <div class="menu-hero-section">
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-what-i-build')">[ WHAT
+                        I BUILD ]</button>
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-about-me')">[ ABOUT ME
+                        ]</button>
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-my-work')">[ SELECTED
+                        WORK ]</button>
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-process')">[ PROCESS
+                        ]</button>
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-let-talk')">[ CONTACT
+                        ME ]</button>
+                </div>
+            </nav>
+        </div>
     </div>
 </div>
 
-<section class="section-about-me">
-    <div class="section-title-left">
-        <h1 class="section-title" id="about-me-title">ABOUT ME</h1>
-        <h2>ABOUT ME - ABOUT ME - ABOUT ME</h2>
-        <p class="section-description" id="about-me-description">I design and develop websites that are fast, secure, and easy to use. I also offer a range of other services, including logo design, branding, and social media management.</p>
-    </div>
-</section>
-
-<section class="section-what-i-build">
-    <!-- <div class="section-title-right">
-        <h1 class="section-title" id="what-i-build-title">WHAT I BUILD</h1>
-        <h2>WHAT I BUILD - WHAT I BUILD - WHAT I BUILD</h2>
-        <p class="section-description" id="what-i-build-description">I design and develop websites that are fast, secure, and easy to use. I also offer a range of other services, including logo design, branding, and social media management.</p>
-    </div> -->
+<!-- WHAT I BUILD SECTION -->
+<section id="section-what-i-build">
     <app-what-i-build-content></app-what-i-build-content>
 </section>
 
-<section class="section-about-me">
-    <div class="section-title-left">
-        <h1 class="section-title" id="about-me-title">ABOUT ME</h1>
-        <h2>ABOUT ME - ABOUT ME - ABOUT ME</h2>
-        <p class="section-description" id="about-me-description">I design and develop websites that are fast, secure, and easy to use. I also offer a range of other services, including logo design, branding, and social media management.</p>
+
+<!-- ABOUT ME SECTION -->
+<section id="section-about-me">
+    <div class="about-me-layout">
+        <img src="assets/images/GLYPHS_6.svg" alt="Gothic glyphs" class="about-me-glyphs-img">
+        <div class="about-me-left">
+            <div class="section-title section-left" id="about-me-title-wrapper">
+                <h1 class="section-main-title" id="about-me-title">ABOUT ME</h1>
+                <h2 class="section-title-secondary">ABOUT ME - ABOUT ME - ABOUT ME</h2>
+                <p class="section-description" id="about-me-description" [innerHTML]="'about.description' | transloco">
+                </p>
+            </div>
+            <div class="about-me-cards">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="--icon: url('assets/icons/design.svg')"></div>
+                        <span class="plus-icon">+</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>{{ 'about.cards.design.title' | transloco }}</h3>
+                        <p [innerHTML]="'about.cards.design.desc' | transloco"></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="--icon: url('assets/icons/dev.svg')"></div>
+                        <span class="plus-icon">+</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>{{ 'about.cards.dev.title' | transloco }}</h3>
+                        <p [innerHTML]="'about.cards.dev.desc' | transloco"></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="--icon: url('assets/icons/kustom.svg')"></div>
+                        <span class="plus-icon">+</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>{{ 'about.cards.custom.title' | transloco }}</h3>
+                        <p [innerHTML]="'about.cards.custom.desc' | transloco"></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="--icon: url('assets/icons/details.svg')"></div>
+                        <span class="plus-icon">+</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>{{ 'about.cards.details.title' | transloco }}</h3>
+                        <p [innerHTML]="'about.cards.details.desc' | transloco"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <app-ascii-3d class="ascii-skull-wrapper" modelPath="assets/3d/Crane.glb" [asciiCharset]="' #@#0:. '"
+            [asciiResolution]="0.16" [followCursor]="true" [floatIntensity]="0.10" [modelScale]="3"
+            [cameraPerspective]="50" [damping]="0.07" charColor="rgb(28, 28, 28)" charFont="Consolas"
+            charWeight="900"></app-ascii-3d>
     </div>
 </section>
 
-<section class="section-why-nocte-syndicate">
-    <div class="section-title-left">
-        <h1 class="section-title" id="why-nocte-syndicate-title">WHY NOCTE SYNDIKATE</h1>
-        <h2>WHY NOCTE SYNDIKATE - WHY NOCTE SYNDIKATE - WHY NOCTE SYNDIKATE</h2>
-        <p class="section-description" id="why-nocte-syndicate-description">I design and develop websites that are fast, secure, and easy to use. I also offer a range of other services, including logo design, branding, and social media management.</p>
+<!-- SELECTED WORK SECTION -->
+<section id="section-my-work">
+    <div class="section-title section-right">
+        <h1 class="section-main-title">SELECTED WORK</h1>
+        <h2 class="section-title-secondary">SELECTED WORK - SELECTED WORK - SELECTED WORK</h2>
+        <p class="section-description">{{ 'work.description' | transloco }}</p>
+    </div>
+    <div class="selected-work-scape">
+        <div class="selected-work-item dark-theme">
+            <div class="work-banner-number">01</div>
+            <div class="work-banner-content">
+                <p class="work-banner-project-type">{{ 'work.projects.nuke.type' | transloco }}</p>
+                <h3 class="work-banner-project-name">NUKE-WINTER</h3>
+                <p class="work-banner-project-description">{{ 'work.projects.nuke.desc' | transloco }}</p>
+                <!-- <a class="work-banner-link">VIEW CASE STUDY <span class="arrow">⟶</span></a> -->
+            </div>
+            <div class="work-banner-image-wrapper">
+                <img src="assets/banners/nuke-winter.webp" alt="Nuke-Winter-Website" class="work-banner">
+            </div>
+        </div>
+
+        <div class="selected-work-item dark-theme">
+            <div class="work-banner-number">02</div>
+            <div class="work-banner-content">
+                <p class="work-banner-project-type">{{ 'work.projects.cyber.type' | transloco }}</p>
+                <h3 class="work-banner-project-name">CYBER-RESUME</h3>
+                <p class="work-banner-project-description">{{ 'work.projects.cyber.desc' | transloco }}</p>
+                <!-- <a class="work-banner-link">VIEW CASE STUDY <span class="arrow">⟶</span></a> -->
+            </div>
+            <div class="work-banner-image-wrapper">
+                <img src="assets/banners/cyber-resume.webp" alt="Cyber-Resume-Website" class="work-banner">
+            </div>
+        </div>
+
+        <div class="selected-work-item dark-theme">
+            <div class="work-banner-number">03</div>
+            <div class="work-banner-content">
+                <p class="work-banner-project-type">{{ 'work.projects.efsf.type' | transloco }}</p>
+                <h3 class="work-banner-project-name">E-FSF</h3>
+                <p class="work-banner-project-description">{{ 'work.projects.efsf.desc' | transloco }}</p>
+                <a class="work-banner-link" href="https://www.eformationsansfrontiere.fr/" target="_blank">{{
+                    'work.projects.efsf.link' | transloco }} <span class="arrow">⟶</span></a>
+            </div>
+            <div class="work-banner-image-wrapper">
+                <img src="assets/banners/e-fsf.webp" alt="E-FSF-Website" class="work-banner">
+            </div>
+        </div>
+
+        <div class="selected-work-item dark-theme">
+            <div class="work-banner-number">04</div>
+            <div class="work-banner-content">
+                <p class="work-banner-project-type">{{ 'work.projects.coaction.type' | transloco }}</p>
+                <h3 class="work-banner-project-name">CO-Action Coaching</h3>
+                <p class="work-banner-project-description">{{ 'work.projects.coaction.desc' | transloco }}</p>
+                <!-- <a class="work-banner-link">VIEW WEBSITE <span class="arrow">⟶</span></a> -->
+            </div>
+            <div class="work-banner-image-wrapper">
+                <img src="assets/banners/co-action-coaching.webp" alt="Co-Action-Coaching-Visual-Identity"
+                    class="work-banner">
+            </div>
+        </div>
     </div>
 </section>
+
+<!-- PROCESS SECTION -->
+<section id="section-process">
+    <img src="assets/images/GLYPHS_7" alt="">
+    <div class="section-title section-left">
+        <h1 class="section-main-title">PROCESS</h1>
+        <h2 class="section-title-secondary">PROCESS - PROCESS - PROCESS</h2>
+        <p class="section-description">{{ 'process.description' | transloco }}</p>
+    </div>
+    <app-process-section></app-process-section>
+</section>
+
+<!-- LET'S TALK SECTION -->
+<section id="section-let-talk">
+    <app-contact-section></app-contact-section>
+</section>
+
+<footer>
+
+</footer>

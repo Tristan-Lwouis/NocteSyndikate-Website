@@ -1,4 +1,11 @@
 /* --- Hero section Styles --- */
+.hero-pin-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
 .hero-section-global {
     // background-color: var(--background-color);
     height: 100vh;
@@ -36,30 +43,35 @@
 
 .nocte-circles-container {
     position: absolute;
-    top: 50vh;
-    right: 0%;
-    /* Position du cercle */
-    transform: translate(45%, -50%);
-    width: clamp(800px, 80vw, 1200px);
-    height: clamp(800px, 80vw, 1200px);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* Centrage absolu PARFAIT au milieu de l'écran */
+    // width: clamp(1600px, 160vw, 2400px);
+    // height: clamp(1600px, 160vw, 2400px);
+    width: 110vw;
+    height: 110vw;
     pointer-events: none;
+    will-change: transform;
 
     display: grid;
     place-items: center;
 
     .nocte-circles {
         grid-area: 1 / 1;
-        width: 65%;
-        height: 65%;
+        width: 32.5%;
+        height: 32.5%;
         pointer-events: none;
         z-index: 1;
     }
 
     .circle-background {
         grid-area: 1 / 1;
-        width: 30%;
-        height: 30%;
-        // background-color: var(--background-color);
+        width: 25%;
+        height: 25%;
+        background-color: var(--background-color);
         border-radius: 50%;
         pointer-events: none;
         z-index: 0;
@@ -76,24 +88,314 @@
     }
 }
 
-.section-what-i-build {
+/* --- Section What I Build --- */
+
+#section-what-i-build {
     position: relative;
-    margin-top: 20vh;
+    // margin-top: 20vh;
     z-index: 10;
 }
 
-.section-about-me {
+/* --- Section About Me --- */
+
+#section-about-me {
+    // background-color: red;
     height: 100vh;
     position: relative;
-    margin-top: 20vh;
+    margin-top: 30vh;
     z-index: 10;
 
-    .section-title-left {
-        color: var(--primary-color);
-        width: 60%;
+    .about-me-layout {
+        // background-color: red;
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 1%;
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        padding: 0 2%;
+
+        .about-me-glyphs-img {
+                position: absolute;
+                top: -10%;
+                right: -5%;
+                height: 100%;
+                opacity: 0.04;
+                z-index: 0;
+            }
+
+        .about-me-left {
+            // background-color: yellow;
+            flex: 0 0 auto;
+            width: 65%;
+            position: relative;
+
+
+
+            #about-me-title-wrapper {
+                // border: 2px solid rgb(0, 255, 179);
+                width: 100%;
+                position: relative;
+                z-index: 1;
+
+                #about-me-description {
+                    // border: 2px solid red;
+                    width: 70%;
+                    max-width: none; // Annule le max-width: 500px de styles.scss
+                    margin-bottom: 3rem;
+                }
+            }
+
+            .about-me-cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                width: 100%;
+                max-width: 900px;
+                z-index: 2;
+                position: relative;
+
+                .card {
+                    background: rgba(var(--primary-color-rgb), 0.03);
+                    border: 1px solid rgba(var(--primary-color-rgb), 0.1);
+                    border-radius: 12px;
+                    padding: 1.5rem;
+                    transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1), 
+                                background-color 0.3s ease, 
+                                border-color 0.3s ease;
+                    will-change: transform;
+                    backface-visibility: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    min-height: 200px;
+
+                    .card-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        margin-bottom: 1.5rem;
+
+                        .card-icon {
+                            width: 32px;
+                            height: 32px;
+                            background-color: var(--secondary-color);
+                            -webkit-mask: var(--icon) no-repeat center;
+                            mask: var(--icon) no-repeat center;
+                            -webkit-mask-size: contain;
+                            mask-size: contain;
+                            opacity: 0.9;
+                            transition: transform 0.3s ease, opacity 0.3s ease;
+                        }
+
+                        .plus-icon {
+                            font-size: 1.5rem;
+                            font-weight: 300;
+                            opacity: 0.4;
+                            transition: transform 0.3s ease, opacity 0.3s ease;
+                        }
+                    }
+
+                    .card-body {
+                        h3 {
+                            font-size: 1.1rem;
+                            font-weight: 800;
+                            margin: 0 0 0.5rem 0;
+                            letter-spacing: 0.05em;
+                        }
+
+                        p {
+                            font-size: 0.9rem;
+                            line-height: 1.5;
+                            margin: 0;
+                            opacity: 0.7;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: rgba(var(--primary-color-rgb), 0.06);
+                        border-color: rgba(var(--primary-color-rgb), 0.3);
+                        transform: translateY(-8px);
+
+                        .card-icon {
+                            transform: scale(1.1);
+                            opacity: 1;
+                        }
+
+                        .plus-icon {
+                            opacity: 1;
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        .ascii-skull-wrapper {
+            // background-color: blue;
+            height: 85%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
+
+/* --- Section My Work --- */
+
+#section-my-work {
+    min-height: 100vh;
+    position: relative;
+    margin-top: 40vh;
+    z-index: 10;
+    width: 100%;
+    padding: 0 2%;
+
+    .selected-work-scape {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-top: 10vh;
+    }
+
+    .selected-work-item {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        width: 100%;
+        height: 40vh;
+        min-height: 380px;
+        background-color: transparent;
+        color: #e0e0e0;
+        overflow: hidden;
+        position: relative;
+        transition: background-color 0.4s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.03);
+
+            .work-banner-link .arrow {
+                transform: translateX(10px);
+                color: var(--accent-color);
+            }
+
+            .work-banner-link {
+                border-bottom-color: var(--accent-color);
+                color: var(--accent-color);
+            }
+
+            .work-banner {
+                transform: scale(1.05);
+            }
+        }
+
+        .work-banner-number {
+            font-family: 'Vixa-Regular', sans-serif;
+            font-size: clamp(4rem, 8vw, 8rem);
+            font-weight: 300;
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.05em;
+        }
+
+        .work-banner-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 35%;
+            padding: 2rem 4rem 2rem 0;
+            z-index: 2;
+
+            .work-banner-project-type {
+                // font-family: 'Vixa-Regular', sans-serif;
+                font-size: 0.75rem;
+                letter-spacing: 0.3em;
+                color: rgba(255, 255, 255, 0.8);
+                margin-bottom: 1.5rem;
+                text-transform: uppercase;
+            }
+
+            .work-banner-project-name {
+                font-family: 'Vixa-Regular', sans-serif;
+                font-size: clamp(1.5rem, 3vw, 2.5rem);
+                color: #ffffff;
+                margin-bottom: 1rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+            }
+
+            .work-banner-project-description {
+                font-family: 'Inter', sans-serif;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.5);
+                margin-bottom: 2.5rem;
+                max-width: 90%;
+            }
+
+            .work-banner-link {
+                font-family: 'Vixa-Regular', sans-serif;
+                font-size: 0.8rem;
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                letter-spacing: 0.15em;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                padding-bottom: 0.4rem;
+                width: max-content;
+
+                .arrow {
+                    margin-left: 1.5rem;
+                    transition: transform 0.3s ease, color 0.3s ease;
+                    font-family: sans-serif;
+                    font-size: 1.2rem;
+                    line-height: 0.5;
+                }
+            }
+        }
+
+        .work-banner-image-wrapper {
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            mask-image: linear-gradient(to right, transparent, black 15%);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%);
+
+            .work-banner {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+            }
+        }
+    }
+}
+
+/* --- Section Why Nocte Syndicate --- */
+
+#section-process {
+    height: 100vh;
+    margin-top: 20vh;
+    margin-bottom: 20vh; /* ? Ne fonctionne pas */
+    padding: 0 2%;
+    position: relative;
+    z-index: 10;
+}
+
+#section-let-talk{
+    min-height: 100vh;
+    margin-top: 40vh;
+    position: relative;
+    z-index: 10;
+}
+

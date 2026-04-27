@@ -93,18 +93,18 @@ export class ParticlesCircle implements AfterViewInit, OnDestroy {
   @ViewChild('canvas', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
 
   /** Nombre de particules affichées au démarrage */
-  @Input() numberParticlesStart = 200;
+  @Input() numberParticlesStart = 250;
   /** Vitesse globale de déplacement des particules */
-  @Input() particleSpeed = 0.2;
+  @Input() particleSpeed = 0.3;
   /** Facteur d'amortissement ou d'accélération (multiplicateur de vélocité) */
-  @Input() velocity = 2;
+  @Input() velocity = 3;
   /** Rayon du cercle d'apparition des particules */
   @Input() circleWidth = 310;
   /** Couleur des particules (format CSS) */
   @Input() particleColor = 'rgba(0, 0, 0, 0.05)';
 
   /** Durée du cycle d'animation en millisecondes (avant le reset/fade) */
-  @Input() cycleEveryMs = 8_000;
+  @Input() cycleEveryMs = 15_000;
   /** Durée de la transition de disparition (fade out) en millisecondes */
   @Input() fadeDurationMs = 2_000;
   /** Couleur utilisée pour l'effet de fade (format R,G,B) */
@@ -113,6 +113,8 @@ export class ParticlesCircle implements AfterViewInit, OnDestroy {
   private ctx!: CanvasRenderingContext2D;
   private particles: Particle[] = [];
   private rafId: number | null = null;
+  private isVisible = true;
+  private observer: IntersectionObserver | null = null;
 
   private width = 0;
   private height = 0;
@@ -134,6 +136,19 @@ export class ParticlesCircle implements AfterViewInit, OnDestroy {
     this.resizeCanvas();
     this.reset();
 
+    // Pause automatique quand le canvas n'est plus visible à l'écran
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        this.isVisible = entries[0].isIntersecting;
+        if (this.isVisible && this.rafId === null) {
+          // Relance la boucle si elle a été stoppée
+          this.zone.runOutsideAngular(() => this.loop());
+        }
+      },
+      { threshold: 0 }
+    );
+    this.observer.observe(canvas.parentElement ?? canvas);
+
     this.zone.runOutsideAngular(() => {
       this.cycleStartMs = performance.now();
       this.loop();
@@ -143,6 +158,7 @@ export class ParticlesCircle implements AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.rafId !== null) cancelAnimationFrame(this.rafId);
     this.rafId = null;
+    this.observer?.disconnect();
   }
 
   @HostListener('window:resize')
@@ -205,6 +221,12 @@ export class ParticlesCircle implements AfterViewInit, OnDestroy {
   }
 
   private loop = () => {
+    // Si le composant n'est plus visible, on stoppe la RAF pour économiser les ressources
+    if (!this.isVisible) {
+      this.rafId = null;
+      return;
+    }
+
     const now = performance.now();
 
     if (this.phase === 'RUN') {

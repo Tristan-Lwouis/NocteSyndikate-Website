@@ -1,59 +1,34 @@
-# NocteSyndikate
+<div align="center">
+  <img src="public/assets/banners/nocte-syndikate.webp" alt="Nocte Syndikate Banner" width="100%">
+</div>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+# Nocte Syndikate
 
-## Development server
+**Nocte Syndikate** est mon agence web et studio de design graphique. Ce portfolio combine développement sur-mesure et identité visuelle marquante, plongeant l'utilisateur dans une esthétique à mi-chemin entre le brutalisme et le gothique moderne.
 
-To start a local development server, run:
+## 🚀 Fonctionnalités Principales
 
-```bash
-ng serve
-```
+- **Support Multilingue (FR / EN) :** Intégration complète de `Transloco` avec un sélecteur de langue fluide, persistant et compatible SSR.
+- **Scrollytelling & Animations :** Défilement fluide ("smooth scroll") avec `Lenis` et animations cinématiques avec `GSAP` pour une expérience immersive.
+- **Composants 3D & Esthétique :** Modèles 3D en ASCII, effets de particules, curseur personnalisé et "glassmorphism".
+- **Formulaire Serverless :** Formulaire de contact robuste, avec validation complète, relié à `Formspree`.
+- **Performances & Modernité :** Architecture Angular moderne (Standalone Components), optimisation des rendus, et gestion stricte des dépendances.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Stack Technique
 
-## Code scaffolding
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![Transloco](https://img.shields.io/badge/Transloco-blueviolet?style=for-the-badge)
+![Formspree](https://img.shields.io/badge/Formspree-E21D2A?style=for-the-badge)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📩 Contact
 
-```bash
-ng generate component component-name
-```
+Pour toute demande, utilisez le formulaire de la section **Let's Talk** ou contactez-moi directement via mes réseaux.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+*© 2026 Nocte Syndikate. Tous droits réservés.*

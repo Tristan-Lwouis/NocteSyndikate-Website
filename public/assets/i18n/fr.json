@@ -1,0 +1,216 @@
+{
+  "hero": {
+    "description": "Bienvenue chez Nocte Syndikate, mon agence de webdesign et de graphisme basée à Toulouse, France."
+  },
+  "build": {
+    "description": "Je conçois et développe des sites web rapides, sécurisés et intuitifs. Je propose également divers autres services : création de logos, branding et gestion des réseaux sociaux.",
+    "cards": {
+      "card1": {
+        "tag": "[ GRAPHISME ]",
+        "title": "Devenez immédiatement reconnaissable",
+        "desc": "Logos, typographies, illustrations, cartes de visites et tout autres visuels conçus pour rendre votre marque impossible à ignorer."
+      },
+      "card2": {
+        "tag": "[ WEBDESIGN ]",
+        "title": "Des sites web qui convertissent",
+        "desc": "Des sites modernes créés pour inspirer confiance, engager les visiteurs et transformer l'attention en action."
+      },
+      "card3": {
+        "tag": "[ DIRECTION CRÉATIVE ]",
+        "title": "Créez une présence puissante",
+        "desc": "Direction créative, esthétique et cohérence de marque pensées pour sublimer votre image en ligne ou hors ligne."
+      },
+      "card4": {
+        "tag": "[ DÉVELOPPEMENT SUR-MESURE ]",
+        "title": "Des logiciels pensés pour vous",
+        "desc": "Outils sur-mesure, dashboards et tous logiciels métiers conçus spécifiquement pour améliorer et automatiser votre flux de travail."
+      }
+    }
+  },
+  "about": {
+    "description": "Je suis Tristan, créateur de <b>Nocte-Syndikate.</b><br>J'allie design, développement et stratégie pour créer des marques et des sites qui se démarquent.<br><br>Mon travail se situe à la frontière de l'esthétique et le technique,<br>là où l'identité visuelle rencontre le clean code, l'animation et les fonctionnalités.<br><br>Je ne crée pas de sites génériques à partir de templates. Chaque projet a sa propre voix.<br>Mon rôle est de comprendre <b>qui vous êtes,</b><br>et de façonner ma direction créative autour de votre marque, votre audience et de votre histoire.<br>Je conçois une présence digitale avec <b>votre personnalité.</b><br>",
+    "cards": {
+      "design": {
+        "title": "DESIGN DRIVEN",
+        "desc": "Une identité visuelle forte et réfléchie.<br>L'esthétique rencontre la stratégie où chaque détail compte."
+      },
+      "dev": {
+        "title": "DÉVELOPPEUR DANS L'ÂME",
+        "desc": "Un code propre, performant et évolutif.<br>Je code pour bâtir des expériences digitales fluides."
+      },
+      "custom": {
+        "title": "SUR-MESURE",
+        "desc": "Ni templates, ni raccourcis.<br>Uniquement du travail sur-mesure, pensé pour vous."
+      },
+      "details": {
+        "title": "L'OBSESSION DU DÉTAIL",
+        "desc": "Animations, typographie, interactions.<br>Je me concentre sur les détails pour donner vie à votre marque."
+      }
+    }
+  },
+"work": {
+  "description": "Une sélection de projets récents illustrant mon approche du design : créer des identités singulières, des expériences web immersives et des solutions digitales pensées pour marquer les esprits autant que pour atteindre des objectifs concrets.",
+  "projects": {
+    "nuke": {
+      "type": "[ BRANDING + EXPÉRIENCE WEB ]",
+      "desc": "Nuke Winter est un escape-game en ligne à l’univers post-apocalyptique. L’objectif était de concevoir une identité visuelle forte pixel 16bits ainsi qu’une expérience web immersive autant par son image que par ses effets sonores, capable de plonger immédiatement l’utilisateur dans une ambiance froide, sombre et oppressante."
+    },
+    "cyber": {
+      "type": "[ EXPÉRIENCE WEB ]",
+      "desc": "Cyber Resume est un CV / Portfolio en ligne expérimental imaginé comme une vitrine personnelle hors des standards classiques. Ce projet mêle design interactif, animations 3D fluides et esthétique cyberpunk rétro-futuriste afin de transformer une simple présentation en véritable expérience digitale."
+    },
+    "efsf": {
+      "type": "[ BRANDING + EXPÉRIENCE WEB ]",
+      "desc": "E-Formation Sans Frontière est une plateforme moderne développée pour valoriser une offre de formation en informatique. Le travail a consisté à redorer et moderniser l'image de marque en gardant un tont professionnel, rassurant et dynamique, soutenue par une interface claire et orientée conversion.",
+      "link": "VOIR LE SITE"
+    },
+    "coaction": {
+      "type": "[ BRANDING ]",
+      "desc": "Co-Action Coaching est une identité visuelle conçue pour un coach professionnel souhaitant refléter modernité, confiance et accompagnement humain. Le travail s’est concentré sur un univers élégant, structuré et distinctif, capable de renforcer la crédibilité de la marque."
+    }
+  }
+},
+  "process": {
+    "description": "Mon flux de travail, du concept au lancement",
+    "tabs": {
+      "logo": "DESIGN GRAPHIQUE & LOGO",
+      "website": "DESIGN & DÉVELOPPEMENT WEB"
+    },
+    "logoSteps": {
+      "step1": {
+        "title": "PREMIERS PAS",
+        "desc": "Je commence par comprendre votre marque, vos objectifs, votre audience et votre vision.",
+        "bullets": { "0": "Brief projet", "1": "Recherche", "2": "Analyse concurrentielle", "3": "Direction créative" },
+        "duration": "1 - 2 JOURS"
+      },
+      "step2": {
+        "title": "CONCEPTS",
+        "desc": "J'explore des idées et crée plusieurs concepts de logo alignés avec votre identité.",
+        "bullets": { "0": "Croquis", "1": "Développement de concepts", "2": "Moodboard", "3": "Présentations initiales", "4": "Paiement du premier acompte" },
+        "duration": "2 - 4 JOURS"
+      },
+      "step3": {
+        "title": "AFFINAGE",
+        "desc": "J'affine la direction choisie en fonction de vos retours pour atteindre le résultat parfait.",
+        "bullets": { "0": "Révisions", "1": "Typographie & couleurs", "2": "Iconographie", "3": "Ajustements finaux" },
+        "duration": "2 - 5 JOURS"
+      },
+      "step4": {
+        "title": "FINALISATION",
+        "desc": "Je finalise tous les éléments et les prépare pour une utilisation sur toutes vos plateformes.",
+        "bullets": { "0": "Logo final", "1": "Charte graphique", "2": "Utilisation des couleurs & polices", "3": "Export des formats" },
+        "duration": "1 - 2 JOURS"
+      },
+      "step5": {
+        "title": "LIVRAISON",
+        "desc": "Vous recevez un package complet, prêt à propulser votre entreprise.",
+        "bullets": { "0": "Tous les fichiers finaux", "1": "Guide d'utilisation", "2": "Support & transmission", "3": "Paiement du solde" },
+        "duration": "1 JOUR"
+      }
+    },
+    "websiteSteps": {
+      "step1": {
+        "title": "PREMIERS PAS",
+        "desc": "Plongée au coeur de votre marque, vos objectifs, votre audience et votre vision de votre futur site web.",
+        "bullets": { "0": "Audit UX", "1": "Sitemap", "2": "Parcours utilisateurs", "3": "Exigences techniques" },
+        "duration": "2 - 3 JOURS"
+      },
+      "step2": {
+        "title": "WIREFRAME",
+        "desc": "Structuration de la mise en page et de l'expérience utilisateur avant l'application du design visuel.",
+        "bullets": { "0": "Architecture de l'information", "1": "Wireframes basse fidélité", "2": "Cartographie des flux", "3": "Phase de retours" },
+        "duration": "3 - 5 JOURS"
+      },
+      "step3": {
+        "title": "DESIGN",
+        "desc": "Création de l'interface visuelle haut de gamme correspondant à votre identité de marque.",
+        "bullets": { "0": "Design UI", "1": "Interactions & animations", "2": "Maquettes responsives", "3": "Design system", "4": "Paiement du premier acompte" },
+        "duration": "5 - 10 JOURS"
+      },
+      "step4": {
+        "title": "DÉVELOPPEMENT",
+        "desc": "Traduction du design en code propre, performant et évolutif.",
+        "bullets": { "0": "Configuration Frontend", "1": "Animations (GSAP)", "2": "Intégration Backend", "3": "Optimisation des performances" },
+        "duration": "10 - 15 JOURS"
+      },
+      "step5": {
+        "title": "LANCEMENT",
+        "desc": "Tests finaux et déploiement pour assurer une sortie publique irréprochable.",
+        "bullets": { "0": "Tests QA", "1": "Configuration SEO", "2": "Déploiement", "3": "Support post-lancement", "4": "Paiement du solde" },
+        "duration": "1 - 2 JOURS"
+      }
+    },
+    "footer": {
+      "tailored": {
+        "title": "SUR-MESURE",
+        "desc": "Chaque projet est unique. Les délais peuvent varier en fonction de la portée et de la complexité."
+      },
+      "transparent": {
+        "title": "CLAIR & TRANSPARENT",
+        "desc": "Vous êtes impliqué à chaque étape clé. Les retours donnent les meilleurs résultats."
+      },
+      "cta": {
+        "subtitle": "VOUS AVEZ UN PROJET EN TÊTE ?",
+        "link": "DISCUTONS-EN"
+      }
+    }
+  },
+  "contact": {
+    "desc": "Vous avez un projet en tête ou souhaitez simplement me dire bonjour ?<br>Remplissez le formulaire et je vous répondrai dans les plus brefs délais.<br>Construisons ensemble quelque chose d'unique.",
+    "fastReply": {
+      "title": "[ RÉPONSE RAPIDE ]",
+      "text": "Je réponds généralement sous 24h."
+    },
+    "privacy": {
+      "title": "[ CONFIDENTIALITÉ ]",
+      "text": "Toutes vos informations restent confidentielles et ne seront jamais partagées à un tiers."
+    },
+    "form": {
+      "labels": {
+        "firstName": "PRÉNOM *",
+        "lastName": "NOM *",
+        "email": "ADRESSE EMAIL *",
+        "emailConfirm": "CONFIRMER L'EMAIL *",
+        "projectType": "TYPE DE PROJET *",
+        "budget": "BUDGET *",
+        "message": "PARLEZ-MOI DE VOTRE PROJET *"
+      },
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "votre@email.com",
+      "emailMismatch": "Les adresses email ne correspondent pas.",
+      "projectType": {
+        "placeholder": "Sélectionnez le type de projet",
+        "options": {
+          "logo": "Logo / Identité de Marque",
+          "websiteDesign": "Design de Site Web",
+          "websiteDev": "Développement de Site Web",
+          "customSoftware": "Logiciel Sur-Mesure",
+          "other": "Autre"
+        },
+        "other": "Veuillez préciser le type de projet"
+      },
+      "budget": {
+        "placeholder": "Sélectionnez votre budget",
+        "options": {
+          "under500": "Moins de 500€",
+          "500to1500": "500€ - 1500€",
+          "1500to3000": "1500€ - 3000€",
+          "over3000": "Plus de 3000€",
+          "notSure": "Pas encore sûr"
+        }
+      },
+      "message": "Décrivez votre projet, vos objectifs, vos idées ou tout détail utile...",
+      "consent": "J'accepte le traitement de mes données afin de recevoir une réponse.",
+      "sending": "ENVOI...",
+      "send": "ENVOYER LE MESSAGE",
+      "privacyNote": "Toutes les informations restent confidentielles<br>et ne seront jamais partagées à un tiers.",
+      "success": "Message envoyé avec succès ! Je vous recontacte très bientôt.",
+      "error": "Une erreur s'est produite lors de l'envoi. Veuillez réessayer."
+    },
+    "footer": {
+      "availLabel": "[ DISPONIBILITÉ ]",
+      "availValue": "À tout moment, à condition d'avoir un stock suffisant de White Monsters"
+    }
+  }
+}

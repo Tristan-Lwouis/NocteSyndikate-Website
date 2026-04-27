@@ -1,0 +1,216 @@
+{
+  "hero": {
+    "description": "Welcome to Nocte Syndikate, my web design and graphic design agency based in Toulouse, France."
+  },
+  "build": {
+    "description": "I design and develop websites that are fast, secure, and easy to use. I also offer a range of other services, including logo design, branding, and social media management.",
+    "cards": {
+      "card1": {
+        "tag": "[ BRANDING ]",
+        "title": "Become Instantly Recognizable",
+        "desc": "Logos, typography, illustrations, business cards and all other visuals designed to make your brand impossible to ignore."
+      },
+      "card2": {
+        "tag": "[ WEBDESIGN ]",
+        "title": "Websites That Convert & Impress",
+        "desc": "Modern websites built to inspire trust, engage visitors and turn attention into action."
+      },
+      "card3": {
+        "tag": "[ CREATIVE DIRECTION ]",
+        "title": "Create a Powerful Presence",
+        "desc": "Creative direction, aesthetics and brand consistency designed to elevate your image online or offline."
+      },
+      "card4": {
+        "tag": "[ CUSTOM DEVELOPMENT ]",
+        "title": "Software Built Around You",
+        "desc": "Custom tools, dashboards and all business software designed specifically to improve and automate your workflow."
+      }
+    }
+  },
+  "about": {
+    "description": "I’m Tristan, founder of <b>Nocte-Syndikate.</b><br>I blend design, development and strategy to create brands and websites that stand apart.<br><br>My work lives between aesthetics and engineering,<br>where visual identity meets clean code, motion and functionality.<br><br>I don’t build generic websites from templates. Every project has its own voice.<br>My role is to understand <b>who you are,</b><br>and shape my creative direction around your brand, audience and story.<br>I craft digital presence with <b>personality.</b><br>",
+    "cards": {
+      "design": {
+        "title": "DESIGN DRIVEN",
+        "desc": "Strong visual identity with purpose.<br>Aesthetics meet strategy where every detail matters."
+      },
+      "dev": {
+        "title": "DEVELOPER AT HEART",
+        "desc": "Clean code, performant, and scalable.<br>I code to build seamless digital experiences."
+      },
+      "custom": {
+        "title": "CUSTOM MADE",
+        "desc": "No templates, no shortcuts.<br>Pure custom work, built for you."
+      },
+      "details": {
+        "title": "OBSESSION WITH DETAILS",
+        "desc": "Motion, typography, interactions.<br>I focus on details to bring your brand to life."
+      }
+    }
+  },
+"work": {
+  "description": "A selection of recent projects showcasing my design approach: creating distinctive identities, immersive web experiences, and digital solutions built to leave a lasting impression while achieving real business goals.",
+  "projects": {
+    "nuke": {
+      "type": "[ BRANDING + WEB EXPERIENCE ]",
+      "desc": "Nuke Winter is an online escape game set in a post-apocalyptic world. The goal was to craft a strong 16-bit pixel visual identity alongside an immersive web experience, enhanced through both visuals and sound design, capable of instantly drawing users into a cold, dark and oppressive atmosphere."
+    },
+    "cyber": {
+      "type": "[ WEB EXPERIENCE ]",
+      "desc": "Cyber Resume is an experimental online resume / portfolio imagined as a personal showcase beyond traditional standards. This project combines interactive design, fluid 3D animations and a retro-futuristic cyberpunk aesthetic to transform a simple presentation into a true digital experience."
+    },
+    "efsf": {
+      "type": "[ BRANDING + WEB EXPERIENCE ]",
+      "desc": "E-Formation Sans Frontière is a modern platform developed to elevate a tech training offer. The project focused on refreshing and modernizing the brand image while maintaining a professional, trustworthy and dynamic tone, supported by a clear conversion-focused interface.",
+      "link": "VIEW WEBSITE"
+    },
+    "coaction": {
+      "type": "[ BRANDING ]",
+      "desc": "Co-Action Coaching is a visual identity created for a professional coach seeking to reflect modernity, trust and human support. The work focused on building an elegant, structured and distinctive universe designed to strengthen the brand’s credibility."
+    }
+  }
+},
+  "process": {
+    "description": "My workflow from concept to launch",
+    "tabs": {
+      "logo": "LOGO & GRAPHIC DESIGN",
+      "website": "WEBSITE DESIGN & DEVELOPMENT"
+    },
+    "logoSteps": {
+      "step1": {
+        "title": "FIRST STEPS",
+        "desc": "I start by understanding your brand, your goals, your audience and your vision.",
+        "bullets": { "0": "Project brief", "1": "Research", "2": "Competitor analysis", "3": "Creative direction" },
+        "duration": "1 - 2 DAYS"
+      },
+      "step2": {
+        "title": "CONCEPTS",
+        "desc": "I explore ideas and craft multiple logo concepts aligned with your brand identity.",
+        "bullets": { "0": "Sketching", "1": "Concept development", "2": "Moodboard", "3": "Initial presentations", "4": "First payment" },
+        "duration": "2 - 4 DAYS"
+      },
+      "step3": {
+        "title": "REFINEMENT",
+        "desc": "I refine the chosen direction based on your feedback to achieve the perfect result.",
+        "bullets": { "0": "Revisions", "1": "Typography & color", "2": "Iconography", "3": "Final adjustments" },
+        "duration": "2 - 5 DAYS"
+      },
+      "step4": {
+        "title": "FINALIZATION",
+        "desc": "I finalize all assets and prepare them for use across all your platforms.",
+        "bullets": { "0": "Final logo lockup", "1": "Brand guidelines", "2": "Color & font usage", "3": "File formats export" },
+        "duration": "1 - 2 DAYS"
+      },
+      "step5": {
+        "title": "DELIVERY",
+        "desc": "You receive a complete brand package, ready to elevate your business.",
+        "bullets": { "0": "All final files", "1": "Usage guidelines", "2": "Support & handoff", "3": "Final payment" },
+        "duration": "1 DAY"
+      }
+    },
+    "websiteSteps": {
+      "step1": {
+        "title": "FIRST STEPS",
+        "desc": "Deep dive into your brand, your goals, your audience and your vision for your future website.",
+        "bullets": { "0": "UX Audit", "1": "Sitemap", "2": "User journeys", "3": "Technical requirements" },
+        "duration": "2 - 3 DAYS"
+      },
+      "step2": {
+        "title": "WIREFRAME",
+        "desc": "Structuring the layout and user experience before applying visual design.",
+        "bullets": { "0": "Information architecture", "1": "Low-fidelity wireframes", "2": "Core flow mapping", "3": "Feedback round" },
+        "duration": "3 - 5 DAYS"
+      },
+      "step3": {
+        "title": "DESIGN",
+        "desc": "Crafting the high-end visual interface matching your brand identity.",
+        "bullets": { "0": "UI Design", "1": "Interactions & motion", "2": "Responsive layouts", "3": "Design system", "4": "First payment" },
+        "duration": "5 - 10 DAYS"
+      },
+      "step4": {
+        "title": "DEVELOPMENT",
+        "desc": "Translating the design into clean, performant, and scalable code.",
+        "bullets": { "0": "Frontend setup", "1": "Animations (GSAP)", "2": "Backend integration", "3": "Performance optimization" },
+        "duration": "10 - 15 DAYS"
+      },
+      "step5": {
+        "title": "LAUNCH",
+        "desc": "Final testing and deployment to ensure a flawless public release.",
+        "bullets": { "0": "QA Testing", "1": "SEO setup", "2": "Deployment", "3": "Post-launch support", "4": "Final payment" },
+        "duration": "1 - 2 DAYS"
+      }
+    },
+    "footer": {
+      "tailored": {
+        "title": "TAILORED TO YOU",
+        "desc": "Every project is unique. Timelines may vary depending on the scope and complexity."
+      },
+      "transparent": {
+        "title": "CLEAR & TRANSPARENT",
+        "desc": "You're involved at every key step. Feedback drives the best results."
+      },
+      "cta": {
+        "subtitle": "HAVE A PROJECT IN MIND ?",
+        "link": "LET'S TALK"
+      }
+    }
+  },
+  "contact": {
+    "desc": "Have a project in mind or just want to say hello?<br>Fill out the form and I'll get back to you as soon as possible.<br>Let's build something unique together.",
+    "fastReply": {
+      "title": "[ FAST REPLY ]",
+      "text": "I usually reply within 24h."
+    },
+    "privacy": {
+      "title": "[ PRIVACY ]",
+      "text": "All your information is kept confidential and will never ever be shared."
+    },
+    "form": {
+      "labels": {
+        "firstName": "FIRST NAME *",
+        "lastName": "LAST NAME *",
+        "email": "EMAIL ADDRESS *",
+        "emailConfirm": "CONFIRM EMAIL *",
+        "projectType": "PROJECT TYPE *",
+        "budget": "BUDGET RANGE *",
+        "message": "TELL ME ABOUT YOUR PROJECT *"
+      },
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "your@email.com",
+      "emailMismatch": "Emails do not match.",
+      "projectType": {
+        "placeholder": "Select the type of project",
+        "options": {
+          "logo": "Logo / Brand Identity",
+          "websiteDesign": "Website Design",
+          "websiteDev": "Website Development",
+          "customSoftware": "Custom Software",
+          "other": "Other"
+        },
+        "other": "Please specify your project type"
+      },
+      "budget": {
+        "placeholder": "Select your budget range",
+        "options": {
+          "under500": "Under 500€",
+          "500to1500": "500€ - 1500€",
+          "1500to3000": "1500€ - 3000€",
+          "over3000": "3000€+",
+          "notSure": "Not sure yet"
+        }
+      },
+      "message": "Describe your project, goals, ideas or any details that can help...",
+      "consent": "I agree to the processing of my data in order to receive a response.",
+      "sending": "SENDING...",
+      "send": "SEND MESSAGE",
+      "privacyNote": "All information is kept confidential<br>and will never be shared.",
+      "success": "Message sent successfully ! I will get back to you shortly.",
+      "error": "An error occurred while sending the message. Please try again."
+    },
+    "footer": {
+      "availLabel": "[ AVAILABILITY ]",
+      "availValue": "At any time, provided I have a stock of white monsters"
+    }
+  }
+}

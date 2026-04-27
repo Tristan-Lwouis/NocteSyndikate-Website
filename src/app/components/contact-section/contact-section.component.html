@@ -1,0 +1,155 @@
+<div class="contact-container">
+    <div class="contact-left">
+        <div class="section-title section-left">
+            <h1 class="section-main-title">LET'S TALK</h1>
+            <h2 class="section-title-secondary">LET'S TALK - LET'S TALK - LET'S TALK</h2>
+            <p class="section-description" [innerHTML]="'contact.desc' | transloco"></p>
+        </div>
+
+        <div class="fast-reply">
+            <span class="star-icon" style="-webkit-mask-image: url('assets/icons/reply.svg'); mask-image: url('assets/icons/reply.svg');"></span>
+            <div>
+                <strong>{{ 'contact.fastReply.title' | transloco }}</strong>
+                <span>{{ 'contact.fastReply.text' | transloco }}</span>
+            </div>
+        </div>
+        <div class="fast-reply">
+            <span class="star-icon" style="-webkit-mask-image: url('assets/icons/lock.svg'); mask-image: url('assets/icons/lock.svg');"></span>
+            <div>
+                <strong>{{ 'contact.privacy.title' | transloco }}</strong>
+                <span>{{ 'contact.privacy.text' | transloco }}</span>
+            </div>
+        </div>
+
+        <img src="assets/images/GLYPHS_1.svg" class="bg-glyph" alt="">
+    </div>
+
+    <div class="contact-right">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="premium-form">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">{{ 'contact.form.labels.firstName' | transloco }}</label>
+                    <input type="text" id="firstName" formControlName="firstName" [placeholder]="'contact.form.firstName' | transloco" 
+                           [class.error]="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">{{ 'contact.form.labels.lastName' | transloco }}</label>
+                    <input type="text" id="lastName" formControlName="lastName" [placeholder]="'contact.form.lastName' | transloco" 
+                           [class.error]="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">{{ 'contact.form.labels.email' | transloco }}</label>
+                    <input type="email" id="email" formControlName="email" [placeholder]="'contact.form.email' | transloco"
+                           [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                </div>
+                <div class="form-group">
+                    <label for="emailConfirm">{{ 'contact.form.labels.emailConfirm' | transloco }}</label>
+                    <input type="email" id="emailConfirm" formControlName="emailConfirm" [placeholder]="'contact.form.email' | transloco"
+                           [class.error]="(contactForm.get('emailConfirm')?.invalid || contactForm.hasError('emailMismatch')) && contactForm.get('emailConfirm')?.touched">
+                </div>
+            </div>
+
+            @if (contactForm.hasError('emailMismatch') && contactForm.get('emailConfirm')?.touched) {
+                <div class="error-text">{{ 'contact.form.emailMismatch' | transloco }}</div>
+            }
+
+            <div class="form-group">
+                <label for="projectType">{{ 'contact.form.labels.projectType' | transloco }}</label>
+                <div class="select-wrapper">
+                    <select id="projectType" formControlName="projectType" 
+                            [class.error]="contactForm.get('projectType')?.invalid && contactForm.get('projectType')?.touched">
+                        <option value="" disabled selected>{{ 'contact.form.projectType.placeholder' | transloco }}</option>
+                        <option value="Logo / Brand Identity">{{ 'contact.form.projectType.options.logo' | transloco }}</option>
+                        <option value="Website Design">{{ 'contact.form.projectType.options.websiteDesign' | transloco }}</option>
+                        <option value="Website Development">{{ 'contact.form.projectType.options.websiteDev' | transloco }}</option>
+                        <option value="Custom Software">{{ 'contact.form.projectType.options.customSoftware' | transloco }}</option>
+                        <option value="Other">{{ 'contact.form.projectType.options.other' | transloco }}</option>
+                    </select>
+                </div>
+
+                @if (contactForm.get('projectType')?.value === 'Other') {
+                    <div class="form-group-sub">
+                        <input type="text" formControlName="otherDetails" [placeholder]="'contact.form.projectType.other' | transloco"
+                               [class.error]="contactForm.get('otherDetails')?.invalid && contactForm.get('otherDetails')?.touched">
+                    </div>
+                }
+            </div>
+
+            <div class="form-group">
+                <label for="budget">{{ 'contact.form.labels.budget' | transloco }}</label>
+                <div class="select-wrapper">
+                    <select id="budget" formControlName="budget"
+                            [class.error]="contactForm.get('budget')?.invalid && contactForm.get('budget')?.touched">
+                        <option value="" disabled selected>{{ 'contact.form.budget.placeholder' | transloco }}</option>
+                        <option value="Under 500€">{{ 'contact.form.budget.options.under500' | transloco }}</option>
+                        <option value="500€ - 1500€">{{ 'contact.form.budget.options.500to1500' | transloco }}</option>
+                        <option value="1500€ - 3000€">{{ 'contact.form.budget.options.1500to3000' | transloco }}</option>
+                        <option value="3000€+">{{ 'contact.form.budget.options.over3000' | transloco }}</option>
+                        <option value="Not sure yet">{{ 'contact.form.budget.options.notSure' | transloco }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">{{ 'contact.form.labels.message' | transloco }}</label>
+                <textarea id="message" formControlName="message" rows="5" 
+                          [placeholder]="'contact.form.message' | transloco"
+                          [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" formControlName="consent">
+                    <span class="custom-checkbox" [class.error]="contactForm.get('consent')?.invalid && contactForm.get('consent')?.touched"></span>
+                    <span class="checkbox-text">{{ 'contact.form.consent' | transloco }}</span>
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" [disabled]="status === 'loading'">
+                    [ {{ status === 'loading' ? ('contact.form.sending' | transloco) : ('contact.form.send' | transloco) }} ]
+                    @if (status !== 'loading') {
+                        <span class="plus">+</span>
+                    }
+                </button>
+                
+                <div class="privacy-note">
+                    <span class="star-icon small" style="-webkit-mask-image: url('assets/icons/kustom.svg'); mask-image: url('assets/icons/kustom.svg');"></span>
+                    <span [innerHTML]="'contact.form.privacyNote' | transloco"></span>
+                </div>
+            </div>
+
+            @if (status === 'success') {
+                <div class="status-message success">
+                    {{ 'contact.form.success' | transloco }}
+                </div>
+            }
+
+            @if (status === 'error') {
+                <div class="status-message error">
+                    {{ 'contact.form.error' | transloco }}
+                </div>
+            }
+
+        </form>
+
+        <div class="contact-footer-info">
+            <div class="info-block">
+                <span class="info-label">[ EMAIL ]</span>
+                <span class="info-value">nocte.grafika@gmail.com</span>
+            </div>
+            <div class="info-block">
+                <span class="info-label">[ LOCATION ]</span>
+                <span class="info-value">Toulouse, France</span>
+            </div>
+            <div class="info-block">
+                <span class="info-label">{{ 'contact.footer.availLabel' | transloco }}</span>
+                <span class="info-value">{{ 'contact.footer.availValue' | transloco }}</span>
+            </div>
+        </div>
+    </div>
+</div>

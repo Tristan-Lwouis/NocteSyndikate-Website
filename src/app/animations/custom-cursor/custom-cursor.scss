@@ -46,6 +46,7 @@
     pointer-events: none;
     z-index: 999998;
     will-change: transform;
+    
   }
   
 .ray {
@@ -61,7 +62,7 @@
   top: 0;
   width: 14px;
   height: 2px;
-  background: #111;
+  background: var(--primary-color);
   border-radius: 2px;
   transform-origin: 0 50%;
   transform: translateX(8px);

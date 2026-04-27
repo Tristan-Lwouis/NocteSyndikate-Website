@@ -1,10 +1,10 @@
 <div class="horizontal-scroll-wrapper" #scrollWrapper>
     <div class="glyphs-background" #glyphsBackground></div>
     <div class="sticky-header">
-        <div class="section-title-right">
-            <h1 class="section-title" id="what-i-build-title">WHAT I BUILD</h1>
-            <h2>WHAT I BUILD - WHAT I BUILD - WHAT I BUILD</h2>
-            <p class="section-description" id="what-i-build-description">I design and develop websites that are fast, secure, and easy to use. I also offer a range of other services, including logo design, branding, and social media management.</p>
+        <div class="section-title section-right">
+            <h1 class="section-main-title" >WHAT I BUILD</h1>
+            <h2 class="section-title-secondary">WHAT I BUILD - WHAT I BUILD - WHAT I BUILD</h2>
+            <p class="section-description">{{ 'build.description' | transloco }}</p>
         </div>
     </div>
     <div class="sticky-container" #stickyContainer>
@@ -13,8 +13,9 @@
                 <div class="card-bg" style="-webkit-mask-image: url('assets/images/GLYPHS_1.svg'); mask-image: url('assets/images/GLYPHS_1.svg');"></div>
                 <div class="card-content">
                     <h1 class="card-number">01</h1>
-                    <h3 class="card-title">Become Instantly Recognizable</h3>
-                    <p class="card-description">Logos, typography and visual systems crafted to make your brand impossible to ignore.</p>
+                    <div class="card-tag">{{ 'build.cards.card1.tag' | transloco }}</div>
+                    <h3 class="card-title">{{ 'build.cards.card1.title' | transloco }}</h3>
+                    <p class="card-description">{{ 'build.cards.card1.desc' | transloco }}</p>
                 </div>
             </div>
 
@@ -22,8 +23,9 @@
                 <div class="card-bg" style="-webkit-mask-image: url('assets/images/GLYPHS_2.svg'); mask-image: url('assets/images/GLYPHS_2.svg');"></div>
                 <div class="card-content">
                     <h1 class="card-number">02</h1>
-                    <h3 class="card-title">Websites That Convert & Impress</h3>
-                    <p class="card-description">Modern websites built to inspire trust, engage visitors and turn attention into action.</p>
+                    <div class="card-tag">{{ 'build.cards.card2.tag' | transloco }}</div>
+                    <h3 class="card-title">{{ 'build.cards.card2.title' | transloco }}</h3>
+                    <p class="card-description">{{ 'build.cards.card2.desc' | transloco }}</p>
                 </div>
             </div>
 
@@ -31,8 +33,9 @@
                 <div class="card-bg" style="-webkit-mask-image: url('assets/images/GLYPHS_3.svg'); mask-image: url('assets/images/GLYPHS_3.svg');"></div>
                 <div class="card-content">
                     <h1 class="card-number">03</h1>
-                    <h3 class="card-title">Create a Powerful Presence</h3>
-                    <p class="card-description">Creative direction, aesthetics and brand consistency designed to elevate your image.</p>
+                    <div class="card-tag">{{ 'build.cards.card3.tag' | transloco }}</div>
+                    <h3 class="card-title">{{ 'build.cards.card3.title' | transloco }}</h3>
+                    <p class="card-description">{{ 'build.cards.card3.desc' | transloco }}</p>
                 </div>
             </div>
 
@@ -40,8 +43,9 @@
                 <div class="card-bg" style="-webkit-mask-image: url('assets/images/GLYPHS_4.svg'); mask-image: url('assets/images/GLYPHS_4.svg');"></div>
                 <div class="card-content">
                     <h1 class="card-number">04</h1>
-                    <h3 class="card-title">Software Built Around You</h3>
-                    <p class="card-description">Custom tools, dashboards and business software designed around your exact workflow.</p>
+                    <div class="card-tag">{{ 'build.cards.card4.tag' | transloco }}</div>
+                    <h3 class="card-title">{{ 'build.cards.card4.title' | transloco }}</h3>
+                    <p class="card-description">{{ 'build.cards.card4.desc' | transloco }}</p>
                 </div>
             </div>
         </div>

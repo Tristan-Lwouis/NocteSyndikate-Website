@@ -1,0 +1,59 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Consolas', monospace;
+  font-size: 1rem;
+  color: var(--primary-color, rgb(28, 28, 28));
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  z-index: 100;
+  transition: color 0.3s ease;
+
+  .separator {
+    opacity: 0.5;
+  }
+
+  .lang-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0.2rem 0;
+    position: relative;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    
+    &:hover {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    &.active {
+      opacity: 1;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: currentColor;
+      }
+    }
+  }
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .language-switcher {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
