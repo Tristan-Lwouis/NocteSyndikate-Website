@@ -231,7 +231,7 @@
         font-family: sans-serif;
         font-weight: 800;
         font-size: 0.9rem;
-        color: #ffffff;
+        color: var(--primary-color);
         margin: 0 0 0.5rem 0;
         letter-spacing: 0.05em;
     }
@@ -266,7 +266,7 @@
         .cta-link {
             font-family: 'Inter', sans-serif;
             font-size: 1.2rem;
-            color: #ffffff;
+            color: var(--primary-color);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -312,7 +312,7 @@
 
 @media (max-width: 900px) {
     .process-container {
-        padding: 2rem;
+        padding: 1rem;
     }
 
     .process-header-info {

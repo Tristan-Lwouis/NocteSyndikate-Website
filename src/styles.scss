@@ -37,12 +37,19 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    html {
+        overflow-x: clip;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--primary-color);
     overflow-x: hidden;
+    overscroll-behavior-x: none;
 }
 
 ::selection {
@@ -130,17 +137,50 @@ p {
         line-height: 0.8;
         margin: 0;
         margin-top: 3vh;
+
+        @media (max-width: 768px) {
+            font-size: 10vw;
+            line-height: 0.9;
+        }
     }
 
     .section-title-secondary {
-        margin: 0;
+        margin: 0 !important;
         line-height: 0.8;
+
+        @media (max-width: 768px) {
+            font-size: 4vw;
+            line-height: 1.2;
+            margin-top: 0.5rem;
+        }
     }
 
     .section-description {
         font-size: 1rem;
         max-width: 500px;
         margin-top: 1rem;
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        width: 100%;
+        margin-left: 5%;
+    }
+    
+    .section-left, .section-right {
+        margin: 2% !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .section-right .section-description,
+    .section-left .section-description {
+        text-align: left !important;
     }
 }
 
@@ -189,5 +229,18 @@ p {
         background-color: var(--accent-color);
         color: #fff;
         transform: translateY(-5px);
+    }
+
+    @media (max-width: 768px) {
+        // position: absolute;
+        bottom: 3%;
+        right: 5%;
+        width: 3rem;
+        height: 3rem;
+        
+        svg {
+            width: 24px;
+            height: 24px;
+        }
     }
 }

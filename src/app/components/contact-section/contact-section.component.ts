@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -16,6 +17,8 @@ export class ContactSectionComponent {
   contactForm: FormGroup;
   status: 'idle' | 'loading' | 'success' | 'error' = 'idle';
 
+  private destroyRef = inject(DestroyRef);
+
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -30,7 +33,7 @@ export class ContactSectionComponent {
     }, { validators: this.emailMatchValidator });
 
     // Gestion de la validation dynamique pour 'Other'
-    this.contactForm.get('projectType')?.valueChanges.subscribe(value => {
+    this.contactForm.get('projectType')?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(value => {
       const otherDetailsControl = this.contactForm.get('otherDetails');
       if (value === 'Other') {
         otherDetailsControl?.setValidators([Validators.required]);
@@ -58,7 +61,7 @@ export class ContactSectionComponent {
     // Formspree requires headers: Accept: application/json
     this.http.post(environment.formspreeEndpoint, this.contactForm.value, {
       headers: { 'Accept': 'application/json' }
-    }).subscribe({
+    }).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: () => {
         this.status = 'success';
         this.contactForm.reset();

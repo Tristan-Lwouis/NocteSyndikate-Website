@@ -21,7 +21,7 @@
         "desc": "Direction créative, esthétique et cohérence de marque pensées pour sublimer votre image en ligne ou hors ligne."
       },
       "card4": {
-        "tag": "[ DÉVELOPPEMENT SUR-MESURE ]",
+        "tag": "[ DEV SUR-MESURE ]",
         "title": "Des logiciels pensés pour vous",
         "desc": "Outils sur-mesure, dashboards et tous logiciels métiers conçus spécifiquement pour améliorer et automatiser votre flux de travail."
       }
@@ -210,7 +210,7 @@
     },
     "footer": {
       "availLabel": "[ DISPONIBILITÉ ]",
-      "availValue": "À tout moment, à condition d'avoir un stock suffisant de White Monsters"
+      "availValue": "À tout moment, sous réserve de stock suffisant de White Monsters"
     }
   }
 }

@@ -109,6 +109,13 @@ export class WhatIBuildContentComponent implements AfterViewInit, OnDestroy {
   }
 
   private onScroll() {
+    if (window.innerWidth <= 768) {
+      if (this.cardsContainer) {
+        this.cardsContainer.nativeElement.style.transform = 'none';
+      }
+      return;
+    }
+
     const wrapper = this.scrollWrapper.nativeElement;
     const cards = this.cardsContainer.nativeElement;
     

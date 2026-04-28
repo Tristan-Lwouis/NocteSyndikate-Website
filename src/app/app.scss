@@ -34,6 +34,51 @@
     }
 }
 
+@media (max-width: 768px) {
+    .hero-section-global {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+        padding: 0 5%;
+        width: 100%;
+        box-sizing: border-box;
+
+        .hero-section-title {
+            font-size: 17vw;
+        }
+
+        h3 {
+            font-size: 5vw;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 4vw;
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .menu-hero-section {
+            align-items: center;
+        }
+    }
+
+    .particles-circles {
+        display: none !important;
+    }
+
+    .nocte-circles-container {
+        width: 150vw !important;
+        height: 150vw !important;
+    }
+}
+
 #text-slider {
     position: relative;
     z-index: 1000;
@@ -105,6 +150,11 @@
     margin-top: 30vh;
     z-index: 10;
 
+    @media (max-width: 768px) {
+        margin-top: 5vh;
+        height: auto;
+    }
+
     .about-me-layout {
         // background-color: red;
         display: flex;
@@ -112,6 +162,10 @@
         height: 100%;
         gap: 2rem;
         padding: 0 2%;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
 
         .about-me-glyphs-img {
                 position: absolute;
@@ -128,7 +182,9 @@
             width: 65%;
             position: relative;
 
-
+            @media (max-width: 768px) {
+                width: 100% !important;
+            }
 
             #about-me-title-wrapper {
                 // border: 2px solid rgb(0, 255, 179);
@@ -136,11 +192,19 @@
                 position: relative;
                 z-index: 1;
 
+                @media (max-width: 768px) {
+                        margin-bottom: 2vh;
+                    }
+
                 #about-me-description {
                     // border: 2px solid red;
                     width: 70%;
                     max-width: none; // Annule le max-width: 500px de styles.scss
                     margin-bottom: 3rem;
+
+                    @media (max-width: 768px) {
+                        width: 100%;
+                    }
                 }
             }
 
@@ -153,8 +217,13 @@
                 z-index: 2;
                 position: relative;
 
+                @media (max-width: 768px) {
+                    margin-top: 5vh;
+                    grid-template-columns: 1fr;
+                }
+
                 .card {
-                    background: rgba(var(--primary-color-rgb), 0.03);
+                    background: rgba(var(--background-color-rgb), 0.3);
                     border: 1px solid rgba(var(--primary-color-rgb), 0.1);
                     border-radius: 12px;
                     padding: 1.5rem;
@@ -167,6 +236,11 @@
                     flex-direction: column;
                     justify-content: space-between;
                     min-height: 200px;
+
+                    @media (max-width: 768px) {
+                        backdrop-filter: blur(2px);
+                        -webkit-backdrop-filter: blur(2px);
+                    }
 
                     .card-header {
                         display: flex;
@@ -235,6 +309,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
     }
 }
@@ -246,6 +324,11 @@
     position: relative;
     margin-top: 40vh;
     z-index: 10;
+
+    @media (max-width: 768px) {
+        margin-top: 5vh;
+        min-height: auto;
+    }
     width: 100%;
     padding: 0 2%;
 
@@ -270,6 +353,13 @@
         position: relative;
         transition: background-color 0.4s ease;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            height: auto;
+            min-height: auto;
+            padding: 2rem 0;
+        }
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.03);
@@ -299,6 +389,10 @@
             align-items: center;
             color: rgba(255, 255, 255, 0.9);
             letter-spacing: 0.05em;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
 
         .work-banner-content {
@@ -309,11 +403,20 @@
             padding: 2rem 4rem 2rem 0;
             z-index: 2;
 
+            @media (max-width: 768px) {
+                width: 100%;
+                padding: 1rem 5%;
+                order: 2;
+                align-items: flex-start;
+                text-align: left;
+                gap: 10px;
+            }
+
             .work-banner-project-type {
                 // font-family: 'Vixa-Regular', sans-serif;
                 font-size: 0.75rem;
                 letter-spacing: 0.3em;
-                color: rgba(255, 255, 255, 0.8);
+                color: var(--secondary-color);
                 margin-bottom: 1.5rem;
                 text-transform: uppercase;
             }
@@ -334,6 +437,10 @@
                 color: rgba(255, 255, 255, 0.5);
                 margin-bottom: 2.5rem;
                 max-width: 90%;
+
+                @media (max-width: 1200px) {
+                    margin-bottom: 1rem;
+                }
             }
 
             .work-banner-link {
@@ -370,6 +477,15 @@
             mask-image: linear-gradient(to right, transparent, black 15%);
             -webkit-mask-image: linear-gradient(to right, transparent, black 15%);
 
+            @media (max-width: 768px) {
+                width: 100%;
+                height: 250px;
+                order: 1;
+                mask-image: none;
+                -webkit-mask-image: none;
+                justify-content: center;
+            }
+
             .work-banner {
                 width: 100%;
                 height: 100%;
@@ -381,12 +497,18 @@
     }
 }
 
-/* --- Section Why Nocte Syndicate --- */
+/* --- Section Process --- */
 
 #section-process {
     height: 100vh;
     margin-top: 20vh;
     margin-bottom: 20vh; /* ? Ne fonctionne pas */
+
+    @media (max-width: 768px) {
+        margin-top: 1vh;
+        margin-bottom: 3vh;
+        height: auto;
+    }
     padding: 0 2%;
     position: relative;
     z-index: 10;
@@ -395,7 +517,70 @@
 #section-let-talk{
     min-height: 100vh;
     margin-top: 40vh;
+
+    @media (max-width: 768px) {
+        margin-top: 5vh;
+        min-height: auto;
+    }
     position: relative;
     z-index: 10;
 }
 
+/* --- Footer --- */
+.site-footer {
+    width: 100%;
+    padding: 2rem 5%;
+    border-top: 1px solid rgba(100, 100, 100, 0.1); /* Utilisation d'une couleur plus subtile que le blanc direct */
+    margin-top: 10vh;
+    font-family: 'Inter', sans-serif;
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        
+        .footer-brand {
+            font-family: 'Vixa-Regular', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            letter-spacing: 0.1em;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 2rem;
+            
+            a {
+                color: var(--primary-color);
+                text-decoration: none;
+                font-weight: 800;
+                font-size: 0.85rem;
+                letter-spacing: 0.1em;
+                transition: color 0.3s ease;
+                
+                &:hover {
+                    color: var(--accent-color);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 4rem 5% 2rem 5%;
+        margin-top: 5vh;
+        
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 1.5rem;
+            
+            .footer-socials {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+    }
+}

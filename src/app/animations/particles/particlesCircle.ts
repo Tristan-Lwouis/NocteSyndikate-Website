@@ -99,7 +99,7 @@ export class ParticlesCircle implements AfterViewInit, OnDestroy {
   /** Facteur d'amortissement ou d'accélération (multiplicateur de vélocité) */
   @Input() velocity = 3;
   /** Rayon du cercle d'apparition des particules */
-  @Input() circleWidth = 310;
+  @Input() circleWidth = 280;
   /** Couleur des particules (format CSS) */
   @Input() particleColor = 'rgba(0, 0, 0, 0.05)';
 

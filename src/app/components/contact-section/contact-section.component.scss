@@ -365,14 +365,18 @@
 @media (max-width: 1200px) {
     .contact-container {
         flex-direction: column;
-        gap: 4rem;
+        // gap: 0;
         padding: 2rem;
     }
 
     .contact-left {
-        .bg-glyph {
-            display: none;
-        }
+        gap: 1vh;
+        width: 100%;
+    }
+
+    .contact-right {
+        width: 100%;
+        margin-top: 0;
     }
 }
 
@@ -399,7 +403,11 @@
         gap: 2rem;
     }
     
-    .contact-left .contact-title {
-        font-size: 5rem;
+    .contact-left {
+        .section-main-title {
+            font-size: 14vw;
+            white-space: normal;
+        }
+
     }
 }
