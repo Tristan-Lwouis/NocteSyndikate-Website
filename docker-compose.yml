@@ -1,0 +1,7 @@
+services:
+  Nocte_Syndikate:
+    build: .
+    container_name: nocte-syndikate
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8083:80"
