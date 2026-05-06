@@ -189,6 +189,10 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
     this.zone.runOutsideAngular(() => {
       this.lenis = new Lenis({ duration: 1.2, smoothWheel: true, lerp: 0.09 });
 
+      let backToTopBtn: HTMLElement | null = null;
+      let heroLangEl: HTMLElement | null = null;
+      let stickyLangEl: HTMLElement | null = null;
+
       let rafColorPending = false;
       let pendingScroll = 0;
       this.lenis.on('scroll', (e: any) => {
@@ -202,10 +206,14 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
         }
         ScrollTrigger.update();
 
-        const backToTopBtn = document.getElementById('back-to-top');
-        if (backToTopBtn) {
-          backToTopBtn.classList.toggle('visible', e.scroll > window.innerHeight * 1.5);
-        }
+        if (!backToTopBtn) backToTopBtn = document.getElementById('back-to-top');
+        if (!heroLangEl)   heroLangEl   = document.getElementById('lang-hero');
+        if (!stickyLangEl) stickyLangEl = document.getElementById('lang-sticky');
+
+        const isVisible = e.scroll > window.innerHeight * 1.5;
+        backToTopBtn?.classList.toggle('visible', isVisible);
+        heroLangEl?.classList.toggle('hidden', isVisible);
+        stickyLangEl?.classList.toggle('visible', isVisible);
       });
 
       this.gsapTickerCallback = (time: number) => this.lenis!.raf(time * 1000);

@@ -1,9 +1,19 @@
 {
   "hero": {
-    "description": "Bienvenue chez Nocte Syndikate, mon agence de webdesign et de graphisme basée à Toulouse, France."
+    "description": "Bienvenue chez Nocte Syndikate, mon agence de webdesign et de graphisme basée à Toulouse, France.",
+    "menu": {
+      "bookACall": "PRENDRE RENDEZ-VOUS",
+      "whatIBuild": "CE QUE JE CRÉE",
+      "aboutMe": "À PROPOS DE MOI",
+      "selectedWork": "MES PROJETS",
+      "process": "MON PROCESS",
+      "contactMe": "CONTACTEZ-MOI"
+    }
   },
   "build": {
-    "description": "Je conçois et développe des sites web rapides, sécurisés et intuitifs. Je propose également divers autres services : création de logos, branding et gestion des réseaux sociaux.",
+    "title": "CE QUE JE CONÇOIS",
+    "titleMarquee": " ",
+    "description": "Je conçois des identités et expériences digitales de A à Z : de la réflexion stratégique au logo, au site web, jusqu’au développement de logiciels sur mesure pour votre activité. J’accompagne aussi votre image au quotidien : branding, maintenance et gestion des réseaux sociaux.",
     "cards": {
       "card1": {
         "tag": "[ GRAPHISME ]",
@@ -28,7 +38,9 @@
     }
   },
   "about": {
-    "description": "Je suis Tristan, créateur de <b>Nocte-Syndikate.</b><br>J'allie design, développement et stratégie pour créer des marques et des sites qui se démarquent.<br><br>Mon travail se situe à la frontière de l'esthétique et le technique,<br>là où l'identité visuelle rencontre le clean code, l'animation et les fonctionnalités.<br><br>Je ne crée pas de sites génériques à partir de templates. Chaque projet a sa propre voix.<br>Mon rôle est de comprendre <b>qui vous êtes,</b><br>et de façonner ma direction créative autour de votre marque, votre audience et de votre histoire.<br>Je conçois une présence digitale avec <b>votre personnalité.</b><br>",
+    "title": "A PROPOS",
+    "titleMarquee": "À PROPOS - À PROPOS - À PROPOS",
+    "description": "Je suis Tristan, créateur de <b>Nocte-Syndikate.</b><br>J'allie design, développement et stratégie pour créer des marques et des sites qui se démarquent.<br><br>Mon travail se situe à la frontière de l'esthétique et du technique,<br>là où l'identité visuelle rencontre le clean code, l'animation et les fonctionnalités.<br><br>Je ne crée pas de sites génériques à partir de templates. Chaque projet a sa propre voix.<br>Mon rôle est de comprendre <b>qui vous êtes,</b><br>et de façonner ma direction créative autour de votre marque, votre audience et de votre histoire.<br>Je conçois une présence digitale avec <b>votre personnalité.</b><br>",
     "cards": {
       "design": {
         "title": "DESIGN DRIVEN",
@@ -49,6 +61,8 @@
     }
   },
 "work": {
+  "title": "MES PROJETS",
+  "titleMarquee": "PROJETS - PROJETS - PROJETS",
   "description": "Une sélection de projets récents illustrant mon approche du design : créer des identités singulières, des expériences web immersives et des solutions digitales pensées pour marquer les esprits autant que pour atteindre des objectifs concrets.",
   "projects": {
     "nuke": {
@@ -61,16 +75,18 @@
     },
     "efsf": {
       "type": "[ BRANDING + EXPÉRIENCE WEB ]",
-      "desc": "E-Formation Sans Frontière est une plateforme moderne développée pour valoriser une offre de formation en informatique. Le travail a consisté à redorer et moderniser l'image de marque en gardant un tont professionnel, rassurant et dynamique, soutenue par une interface claire et orientée conversion.",
+      "desc": "E-Formation Sans Frontière est une plateforme moderne développée pour valoriser une offre de formation en informatique. <br>Le travail a consisté à redorer et moderniser l'image de marque en gardant un tont professionnel, rassurant et dynamique, soutenue par une interface claire et orientée conversion.",
       "link": "VOIR LE SITE"
     },
     "coaction": {
       "type": "[ BRANDING ]",
-      "desc": "Co-Action Coaching est une identité visuelle conçue pour un coach professionnel souhaitant refléter modernité, confiance et accompagnement humain. Le travail s’est concentré sur un univers élégant, structuré et distinctif, capable de renforcer la crédibilité de la marque."
+      "desc": "CO-Action Coaching est une identité visuelle conçue pour une coach qui accompagne des professionnels à prendre du recul, retrouver de la clarté et évoluer vers une situation plus en accord avec leurs besoins. <br>L’objectif était de traduire cela à travers une identité moderne, apaisée et structurée. Le travail s’est concentré sur un univers élégant et lisible, pensé pour inspirer confiance, refléter la dimension humaine de l’accompagnement et asseoir la crédibilité de la marque."
     }
   }
 },
   "process": {
+    "title": "PROCESS",
+    "titleMarquee": "PROCESS - PROCESS - PROCESS",
     "description": "Mon flux de travail, du concept au lancement",
     "tabs": {
       "logo": "DESIGN GRAPHIQUE & LOGO",
@@ -156,6 +172,8 @@
     }
   },
   "contact": {
+    "title": "DISCUTONS",
+    "titleMarquee": "DISCUTONS - DISCUTONS - DISCUTONS",
     "desc": "Vous avez un projet en tête ou souhaitez simplement me dire bonjour ?<br>Remplissez le formulaire et je vous répondrai dans les plus brefs délais.<br>Construisons ensemble quelque chose d'unique.",
     "fastReply": {
       "title": "[ RÉPONSE RAPIDE ]",

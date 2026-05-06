@@ -8,7 +8,8 @@
 </button>
 
 <!-- HERO SECTION -->
-<app-language-switcher></app-language-switcher>
+<app-language-switcher id="lang-hero"></app-language-switcher>
+<app-language-switcher id="lang-sticky"></app-language-switcher>
 <app-text-slider id="text-slider"></app-text-slider>
 <div class="hero-pin-container">
     <div class="nocte-circles-container">
@@ -23,19 +24,13 @@
             <p>{{ 'hero.description' | transloco }}</p>
 
             <nav>
-                <button class="brutalist-button-frame" (click)="scrollToSection('#section-let-talk')">[ BOOK A CALL
-                    ]</button>
+                <button class="brutalist-button-frame" (click)="scrollToSection('#section-let-talk')">[ {{ 'hero.menu.bookACall' | transloco }} ]</button>
                 <div class="menu-hero-section">
-                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-what-i-build')">[ WHAT
-                        I BUILD ]</button>
-                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-about-me')">[ ABOUT ME
-                        ]</button>
-                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-my-work')">[ SELECTED
-                        WORK ]</button>
-                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-process')">[ PROCESS
-                        ]</button>
-                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-let-talk')">[ CONTACT
-                        ME ]</button>
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-what-i-build')">[ {{ 'hero.menu.whatIBuild' | transloco }} ]</button>
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-about-me')">[ {{ 'hero.menu.aboutMe' | transloco }} ]</button>
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-my-work')">[ {{ 'hero.menu.selectedWork' | transloco }} ]</button>
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-process')">[ {{ 'hero.menu.process' | transloco }} ]</button>
+                    <button class="brutalist-button-frameless" (click)="scrollToSection('#section-let-talk')">[ {{ 'hero.menu.contactMe' | transloco }} ]</button>
                 </div>
             </nav>
         </div>
@@ -54,8 +49,8 @@
         <img src="assets/images/GLYPHS_6.svg" alt="Gothic glyphs" class="about-me-glyphs-img">
         <div class="about-me-left">
             <div class="section-title section-left" id="about-me-title-wrapper">
-                <h1 class="section-main-title" id="about-me-title">ABOUT ME</h1>
-                <h2 class="section-title-secondary">ABOUT ME - ABOUT ME - ABOUT ME</h2>
+                <h1 class="section-main-title" id="about-me-title">{{ 'about.title' | transloco }}</h1>
+                <h2 class="section-title-secondary">{{ 'about.titleMarquee' | transloco }}</h2>
                 <p class="section-description" id="about-me-description" [innerHTML]="'about.description' | transloco">
                 </p>
             </div>
@@ -126,17 +121,17 @@
 <!-- SELECTED WORK SECTION -->
 <section id="section-my-work">
     <div class="section-title section-right">
-        <h1 class="section-main-title">SELECTED WORK</h1>
-        <h2 class="section-title-secondary">SELECTED WORK - SELECTED WORK - SELECTED WORK</h2>
-        <p class="section-description">{{ 'work.description' | transloco }}</p>
+        <h1 class="section-main-title" [innerHTML]="'work.title' | transloco"></h1>
+        <h2 class="section-title-secondary" [innerHTML]="'work.titleMarquee' | transloco"></h2>
+        <p class="section-description" [innerHTML]="'work.description' | transloco"></p>
     </div>
     <div class="selected-work-scape">
         <div class="selected-work-item dark-theme">
             <div class="work-banner-number">01</div>
             <div class="work-banner-content">
-                <p class="work-banner-project-type">{{ 'work.projects.nuke.type' | transloco }}</p>
+                <p class="work-banner-project-type" [innerHTML]="'work.projects.nuke.type' | transloco"></p>
                 <h3 class="work-banner-project-name">NUKE-WINTER</h3>
-                <p class="work-banner-project-description">{{ 'work.projects.nuke.desc' | transloco }}</p>
+                <p class="work-banner-project-description" [innerHTML]="'work.projects.nuke.desc' | transloco"></p>
                 <!-- <a class="work-banner-link">VIEW CASE STUDY <span class="arrow">⟶</span></a> -->
             </div>
             <div class="work-banner-image-wrapper">
@@ -147,9 +142,9 @@
         <div class="selected-work-item dark-theme">
             <div class="work-banner-number">02</div>
             <div class="work-banner-content">
-                <p class="work-banner-project-type">{{ 'work.projects.cyber.type' | transloco }}</p>
+                <p class="work-banner-project-type" [innerHTML]="'work.projects.cyber.type' | transloco"></p>
                 <h3 class="work-banner-project-name">CYBER-RESUME</h3>
-                <p class="work-banner-project-description">{{ 'work.projects.cyber.desc' | transloco }}</p>
+                <p class="work-banner-project-description" [innerHTML]="'work.projects.cyber.desc' | transloco"></p>
                 <!-- <a class="work-banner-link">VIEW CASE STUDY <span class="arrow">⟶</span></a> -->
             </div>
             <div class="work-banner-image-wrapper">
@@ -160,11 +155,10 @@
         <div class="selected-work-item dark-theme">
             <div class="work-banner-number">03</div>
             <div class="work-banner-content">
-                <p class="work-banner-project-type">{{ 'work.projects.efsf.type' | transloco }}</p>
+                <p class="work-banner-project-type" [innerHTML]="'work.projects.efsf.type' | transloco"></p>
                 <h3 class="work-banner-project-name">E-FSF</h3>
-                <p class="work-banner-project-description">{{ 'work.projects.efsf.desc' | transloco }}</p>
-                <a class="work-banner-link" href="https://www.eformationsansfrontiere.fr/" target="_blank">{{
-                    'work.projects.efsf.link' | transloco }} <span class="arrow">⟶</span></a>
+                <p class="work-banner-project-description" [innerHTML]="'work.projects.efsf.desc' | transloco"></p>
+                <a class="work-banner-link" href="https://www.eformationsansfrontiere.fr/" target="_blank"><span [innerHTML]="'work.projects.efsf.link' | transloco"></span> <span class="arrow">⟶</span></a>
             </div>
             <div class="work-banner-image-wrapper">
                 <img src="assets/banners/e-fsf.webp" alt="E-FSF-Website" class="work-banner">
@@ -174,9 +168,9 @@
         <div class="selected-work-item dark-theme">
             <div class="work-banner-number">04</div>
             <div class="work-banner-content">
-                <p class="work-banner-project-type">{{ 'work.projects.coaction.type' | transloco }}</p>
+                <p class="work-banner-project-type" [innerHTML]="'work.projects.coaction.type' | transloco"></p>
                 <h3 class="work-banner-project-name">CO-Action Coaching</h3>
-                <p class="work-banner-project-description">{{ 'work.projects.coaction.desc' | transloco }}</p>
+                <p class="work-banner-project-description" [innerHTML]="'work.projects.coaction.desc' | transloco"></p>
                 <!-- <a class="work-banner-link">VIEW WEBSITE <span class="arrow">⟶</span></a> -->
             </div>
             <div class="work-banner-image-wrapper">
@@ -190,8 +184,8 @@
 <!-- PROCESS SECTION -->
 <section id="section-process">
     <div class="section-title section-left">
-        <h1 class="section-main-title">PROCESS</h1>
-        <h2 class="section-title-secondary">PROCESS - PROCESS - PROCESS</h2>
+        <h1 class="section-main-title">{{ 'process.title' | transloco }}</h1>
+        <h2 class="section-title-secondary">{{ 'process.titleMarquee' | transloco }}</h2>
         <p class="section-description">{{ 'process.description' | transloco }}</p>
     </div>
     <app-process-section></app-process-section>

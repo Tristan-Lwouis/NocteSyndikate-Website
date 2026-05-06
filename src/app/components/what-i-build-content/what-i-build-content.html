@@ -2,9 +2,9 @@
     <div class="glyphs-background" #glyphsBackground></div>
     <div class="sticky-header">
         <div class="section-title section-right">
-            <h1 class="section-main-title" >WHAT I BUILD</h1>
-            <h2 class="section-title-secondary">WHAT I BUILD - WHAT I BUILD - WHAT I BUILD</h2>
-            <p class="section-description">{{ 'build.description' | transloco }}</p>
+            <h1 class="section-main-title">{{ 'build.title' | transloco }}</h1>
+            <h2 class="section-title-secondary">{{ 'build.titleMarquee' | transloco }}</h2>
+            <p class="section-description" [innerHTML]="'build.description' | transloco"></p>
         </div>
     </div>
     <div class="sticky-container" #stickyContainer>

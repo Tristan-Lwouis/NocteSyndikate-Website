@@ -1,9 +1,19 @@
 {
   "hero": {
-    "description": "Welcome to Nocte Syndikate, my web design and graphic design agency based in Toulouse, France."
+    "description": "Welcome to Nocte Syndikate, my web design and graphic design agency based in Toulouse, France.",
+    "menu": {
+      "bookACall": " BOOK A CALL ",
+      "whatIBuild": " WHAT I BUILD ",
+      "aboutMe": " ABOUT ME ",
+      "selectedWork": " SELECTED WORK ",
+      "process": " PROCESS ",
+      "contactMe": " CONTACT ME "
+    }
   },
   "build": {
-    "description": "I design and develop websites that are fast, secure, and easy to use. I also offer a range of other services, including logo design, branding, and social media management.",
+    "title": "WHAT I BUILD",
+    "titleMarquee": "WHAT I BUILD - WHAT I BUILD - WHAT I BUILD",
+    "description": "I design digital identities and experiences from A to Z : from strategic thinking to logo creation, website development, and custom software built for your business. I also support your brand day to day through branding, maintenance, and social media management.",
     "cards": {
       "card1": {
         "tag": "[ BRANDING ]",
@@ -28,6 +38,8 @@
     }
   },
   "about": {
+    "title": "ABOUT ME",
+    "titleMarquee": "ABOUT ME - ABOUT ME - ABOUT ME",
     "description": "I’m Tristan, founder of <b>Nocte-Syndikate.</b><br>I blend design, development and strategy to create brands and websites that stand apart.<br><br>My work lives between aesthetics and engineering,<br>where visual identity meets clean code, motion and functionality.<br><br>I don’t build generic websites from templates. Every project has its own voice.<br>My role is to understand <b>who you are,</b><br>and shape my creative direction around your brand, audience and story.<br>I craft digital presence with <b>personality.</b><br>",
     "cards": {
       "design": {
@@ -49,6 +61,8 @@
     }
   },
 "work": {
+  "title": "SELECTED WORK",
+  "titleMarquee": "WORK - WORK - WORK",
   "description": "A selection of recent projects showcasing my design approach: creating distinctive identities, immersive web experiences, and digital solutions built to leave a lasting impression while achieving real business goals.",
   "projects": {
     "nuke": {
@@ -61,16 +75,18 @@
     },
     "efsf": {
       "type": "[ BRANDING + WEB EXPERIENCE ]",
-      "desc": "E-Formation Sans Frontière is a modern platform developed to elevate a tech training offer. The project focused on refreshing and modernizing the brand image while maintaining a professional, trustworthy and dynamic tone, supported by a clear conversion-focused interface.",
+      "desc": "E-Formation Sans Frontière is a modern platform developed to elevate a tech training offer. <br>The project focused on refreshing and modernizing the brand image while maintaining a professional, trustworthy and dynamic tone, supported by a clear conversion-focused interface.",
       "link": "VIEW WEBSITE"
     },
     "coaction": {
       "type": "[ BRANDING ]",
-      "desc": "Co-Action Coaching is a visual identity created for a professional coach seeking to reflect modernity, trust and human support. The work focused on building an elegant, structured and distinctive universe designed to strengthen the brand’s credibility."
+      "desc": "CO-Action Coaching is a visual identity designed for a coach who supports professionals in stepping back, gaining clarity, and moving toward a situation that better aligns with their needs. <br>The objective was to translate this approach into a modern, calm, and structured identity. The work focused on creating an elegant and readable visual universe, designed to inspire trust, reflect the human dimension of the coaching, and establish the brand’s credibility."
     }
   }
 },
   "process": {
+    "title": "PROCESS",
+    "titleMarquee": "PROCESS - PROCESS - PROCESS",
     "description": "My workflow from concept to launch",
     "tabs": {
       "logo": "LOGO & GRAPHIC DESIGN",
@@ -156,6 +172,8 @@
     }
   },
   "contact": {
+    "title": "LET'S TALK",
+    "titleMarquee": "LET'S TALK - LET'S TALK - LET'S TALK",
     "desc": "Have a project in mind or just want to say hello?<br>Fill out the form and I'll get back to you as soon as possible.<br>Let's build something unique together.",
     "fastReply": {
       "title": "[ FAST REPLY ]",
