@@ -121,8 +121,17 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
       const el = document.querySelector<HTMLElement>(config.selector);
       if (!el) continue;
 
-      // Position absolue dans le document (indépendante du scroll courant)
-      const triggerY = el.getBoundingClientRect().top + window.scrollY + config.offset * vh;
+      // Utilisation de ScrollTrigger pour obtenir la position de début réelle de la section.
+      // offset -0.5 (milieu écran) devient "top 50%", offset 0 (haut écran) devient "top 0%"
+      const triggerPercent = Math.abs(config.offset * 100);
+      const st = ScrollTrigger.create({
+        trigger: el,
+        start: `top ${triggerPercent}%`,
+      });
+      
+      const triggerY = st.start;
+      st.kill(); 
+
       const half = (config.transitionPx ?? TRANSITION_PX) / 2;
 
       if (config.theme !== prevTheme) {
@@ -281,17 +290,27 @@ export class App implements OnInit, AfterViewInit, OnDestroy {
           .to('.nocte-circles-container', { scale: 45, ease: 'power3.in' },     'zoom');
       });
 
-      // Construit les stops après que GSAP a mis en place les ScrollTriggers
-      ScrollTrigger.refresh();
-      this.buildColorStops();
-      this.updateColors(window.scrollY);
+      this.refreshAll();
+      setTimeout(() => this.refreshAll(), 500);
+      setTimeout(() => this.refreshAll(), 2000);
 
-      // Reconstruit automatiquement à chaque resize (GSAP émet 'refresh' après un resize)
       ScrollTrigger.addEventListener('refresh', () => {
         this.buildColorStops();
         this.updateColors(window.scrollY);
       });
+
+      // Recalcule quand toutes les ressources (images, polices) sont chargées
+      window.addEventListener('load', () => this.refreshAll());
     });
+  }
+
+  /**
+   * Force GSAP à recalculer toutes ses positions, puis reconstruit nos stops de couleur.
+   */
+  private refreshAll(): void {
+    ScrollTrigger.refresh();
+    this.buildColorStops();
+    this.updateColors(window.scrollY);
   }
 
   ngOnDestroy(): void {
